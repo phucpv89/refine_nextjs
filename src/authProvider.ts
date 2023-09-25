@@ -19,7 +19,9 @@ const mockUsers = [
 export const authProvider: AuthBindings = {
   login: async ({ email, username, password, remember }) => {
     // Suppose we actually send a request to the back end here.
+    console.log("login");
     const user = mockUsers[0];
+    
 
     if (user) {
       nookies.set(null, "auth", JSON.stringify(user), {
@@ -41,6 +43,7 @@ export const authProvider: AuthBindings = {
     };
   },
   logout: async () => {
+    console.log("logout");
     nookies.destroy(null, "auth");
     return {
       success: true,
@@ -48,6 +51,7 @@ export const authProvider: AuthBindings = {
     };
   },
   check: async (ctx: any) => {
+    console.log("check");
     const cookies = nookies.get(ctx);
     if (cookies["auth"]) {
       return {
@@ -62,6 +66,7 @@ export const authProvider: AuthBindings = {
     };
   },
   getPermissions: async () => {
+    console.log("getPermissions");
     const auth = nookies.get()["auth"];
     if (auth) {
       const parsedUser = JSON.parse(auth);
@@ -70,6 +75,7 @@ export const authProvider: AuthBindings = {
     return null;
   },
   getIdentity: async () => {
+    console.log("getIdentity");
     const auth = nookies.get()["auth"];
     if (auth) {
       const parsedUser = JSON.parse(auth);
@@ -78,6 +84,7 @@ export const authProvider: AuthBindings = {
     return null;
   },
   onError: async (error) => {
+    console.log("onError");
     console.error(error);
     return { error };
   },
