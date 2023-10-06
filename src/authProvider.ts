@@ -23,7 +23,6 @@ export const authProvider: AuthBindings = {
   login: async ({ email, username, password, remember }) => {
     // Suppose we actually send a request to the back end here.
     console.log("login");
-    const user = mockUsers[0];
 
     try {
       const resp = await apiInstance.post("/auth/login", {
@@ -106,8 +105,7 @@ export const authProvider: AuthBindings = {
     console.log(">>>>>>>>>>>>>>", params);
     const { email, password } = params;
 
-
-    const name = email.replace(/(.*)@.*/, "$1")
+    const name = email.replace(/(.*)@.*/, "$1");
 
     try {
       const resp = await apiInstance.post(
