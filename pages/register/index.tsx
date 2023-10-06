@@ -1,10 +1,19 @@
-import { AuthPage } from "@refinedev/antd";
+import CustomizeThemedTitle from "@components/CustomizeThemedTitle";
+import { AuthPage, ThemedTitleV2 } from "@refinedev/antd";
 
 import { GetServerSideProps } from "next";
 import { authProvider } from "src/authProvider";
 
 export default function Register() {
-  return <AuthPage type="register" />;
+  return (
+    <AuthPage
+      type="register"
+      formProps={{
+        initialValues: { email: "phucpv89@gmail.com", password: "abc" },
+      }}
+      title={<CustomizeThemedTitle />}
+    />
+  );
 }
 
 Register.noLayout = true;

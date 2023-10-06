@@ -1,3 +1,4 @@
+import CustomizeThemedTitle from "@components/CustomizeThemedTitle";
 import { AuthPage } from "@refinedev/antd";
 
 import { GetServerSideProps } from "next";
@@ -8,8 +9,9 @@ export default function Login() {
     <AuthPage
       type="login"
       formProps={{
-        initialValues: { email: "johndoe@mail.com", password: "demodemo" },
+        initialValues: { email: "nghialt@vng.com.vn", password: "abc" },
       }}
+      title={<CustomizeThemedTitle />}
     />
   );
 }

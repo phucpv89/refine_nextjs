@@ -1,5 +1,8 @@
 import { AuthBindings } from "@refinedev/core";
 import nookies from "nookies";
+import apiInstance from "./apiInstance";
+
+import qs from "qs";
 
 const mockUsers = [
   {
@@ -21,17 +24,28 @@ export const authProvider: AuthBindings = {
     // Suppose we actually send a request to the back end here.
     console.log("login");
     const user = mockUsers[0];
-    
 
-    if (user) {
-      nookies.set(null, "auth", JSON.stringify(user), {
-        maxAge: 30 * 24 * 60 * 60,
-        path: "/",
+    try {
+      const resp = await apiInstance.post("/auth/login", {
+        password: password,
+        email: email,
       });
-      return {
-        success: true,
-        redirectTo: "/",
-      };
+
+      const { data, code } = resp as any;
+      if (code === 1 && data) {
+        nookies.set(null, "auth", JSON.stringify(data), {
+          maxAge: 30 * 24 * 60 * 60,
+          path: "/",
+        });
+        return {
+          success: true,
+          redirectTo: "/",
+        };
+      }
+
+      console.log("login", resp);
+    } catch (error) {
+      console.log("login error", error);
     }
 
     return {
@@ -51,7 +65,7 @@ export const authProvider: AuthBindings = {
     };
   },
   check: async (ctx: any) => {
-    console.log("check");
+    console.log("check", ctx);
     const cookies = nookies.get(ctx);
     if (cookies["auth"]) {
       return {
@@ -88,4 +102,53 @@ export const authProvider: AuthBindings = {
     console.error(error);
     return { error };
   },
+  register: async (params: any) => {
+    console.log(">>>>>>>>>>>>>>", params);
+    const { email, password } = params;
+
+
+    const name = email.replace(/(.*)@.*/, "$1")
+
+    try {
+      const resp = await apiInstance.post(
+        "/auth/register",
+        qs.stringify({
+          email,
+          password,
+          name: name,
+        }),
+        {
+          headers: { "content-type": "application/x-www-form-urlencoded" },
+        },
+      );
+      return {
+        success: true,
+        redirectTo: "/login",
+      };
+    } catch (error) {
+      return {
+        success: false,
+        error: {
+          name: "Signup Error",
+          message: "username or password",
+        },
+      };
+    }
+  },
+  forgotPassword: async () => {
+    return {
+      success: true,
+      redirectTo: "/",
+    };
+  },
+
+  // register?: (params: any) => Promise<AuthActionResponse>;
+  //   forgotPassword?: (params: any) => Promise<AuthActionResponse>;
+  //   updatePassword?: (params: any) => Promise<AuthActionResponse>;
 };
+/* export type AuthActionResponse = {
+  success: boolean;
+  redirectTo?: string;
+  error?: RefineError | Error;
+  [key: string]: unknown;
+}; */

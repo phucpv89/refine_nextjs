@@ -1,23 +1,19 @@
-import CustomizeThemedTitle from "@components/CustomizeThemedTitle";
-import { AuthPage } from "@refinedev/antd";
-
+import { AntdCreateInferencer } from "@refinedev/inferencer/antd";
 import { GetServerSideProps } from "next";
 import { authProvider } from "src/authProvider";
 
-export default function ForgotPassword() {
-  return <AuthPage type="forgotPassword" title={<CustomizeThemedTitle />} />;
+export default function CategoryCreate() {
+  return <AntdCreateInferencer />;
 }
-
-ForgotPassword.noLayout = true;
 
 export const getServerSideProps: GetServerSideProps<{}> = async (context) => {
   const { authenticated, redirectTo } = await authProvider.check(context);
 
-  if (authenticated) {
+  if (!authenticated) {
     return {
       props: {},
       redirect: {
-        destination: redirectTo ?? "/",
+        destination: `${redirectTo}?to=${encodeURIComponent("/categories")}`,
         permanent: false,
       },
     };
