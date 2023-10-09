@@ -30,6 +30,8 @@ import { Edit, useForm } from "@refinedev/antd";
 import { Form, Input, DatePicker, Checkbox } from "antd";
 import dayjs from "dayjs";
 
+const { TextArea } = Input;
+
 export const ArticleEdit: React.FC<IResourceComponentsProps> = () => {
     const { formProps, saveButtonProps, queryResult } = useForm();
 
@@ -88,17 +90,7 @@ export const ArticleEdit: React.FC<IResourceComponentsProps> = () => {
                 >
                     <Input />
                 </Form.Item>
-                <Form.Item
-                    label="Content"
-                    name={["content"]}
-                    rules={[
-                        {
-                            required: true,
-                        },
-                    ]}
-                >
-                    <Input />
-                </Form.Item>
+                
                 <Form.Item
                     label="Is Published"
                     valuePropName="checked"
@@ -134,6 +126,17 @@ export const ArticleEdit: React.FC<IResourceComponentsProps> = () => {
                         </Form.Item>
                     ))}
                 </>
+                <Form.Item
+                    label="Content"
+                    name={["content"]}
+                    rules={[
+                        {
+                            required: true,
+                        },
+                    ]}
+                >
+                    <TextArea rows={4} />
+                </Form.Item>
             </Form>
         </Edit>
     );

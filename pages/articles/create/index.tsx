@@ -36,7 +36,7 @@ export const ArticleCreate: React.FC<IResourceComponentsProps> = () => {
   return (
     <Create saveButtonProps={saveButtonProps}>
       <Form {...formProps} layout="vertical">
-        <Form.Item
+        {/* <Form.Item
           label="Created At"
           name={["created_at"]}
           rules={[
@@ -61,7 +61,7 @@ export const ArticleCreate: React.FC<IResourceComponentsProps> = () => {
             value: value ? dayjs(value) : undefined,
           })}>
           <DatePicker />
-        </Form.Item>
+        </Form.Item> */}
         <Form.Item
           label="Title"
           name={["title"]}
@@ -72,7 +72,7 @@ export const ArticleCreate: React.FC<IResourceComponentsProps> = () => {
           ]}>
           <Input />
         </Form.Item>
-        <Form.Item
+        {/* <Form.Item
           label="Content"
           name={["content"]}
           rules={[
@@ -81,7 +81,7 @@ export const ArticleCreate: React.FC<IResourceComponentsProps> = () => {
             },
           ]}>
           <Input />
-        </Form.Item>
+        </Form.Item> */}
         <Form.Item
           label="Is Published"
           valuePropName="checked"
@@ -92,6 +92,16 @@ export const ArticleCreate: React.FC<IResourceComponentsProps> = () => {
             },
           ]}>
           <Checkbox>Is Published</Checkbox>
+        </Form.Item>
+        <Form.Item
+          label="Content"
+          name={["content"]}
+          rules={[
+            {
+              required: true,
+            },
+          ]}>
+          <Input.TextArea rows={4} />
         </Form.Item>
       </Form>
     </Create>
