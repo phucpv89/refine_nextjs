@@ -25,51 +25,18 @@ import apiInstance from "src/apiInstance";
 import axios from "axios";
 import { ConfigProvider } from "antd";
 import CustomizeThemedTitle from "@components/CustomizeThemedTitle";
-import { DashboardOutlined, NotificationOutlined } from "@ant-design/icons";
+import { DashboardOutlined, NotificationOutlined, UserOutlined, UserSwitchOutlined } from "@ant-design/icons";
 
 const API_URL = "https://api.fake-rest.refine.dev";
 
+import nookies from "nookies";
+
 // const API_URL = "";
 
-const httpClient = axios.create({
-  headers: {
-    "Content-Type": "application/json",
-    Authorization:
-      "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im5naGlhbHRAdm5nLmNvbS52biIsImxhc3RfbG9naW5fYXQiOiIyMDIzLTA5LTI5VDE5OjExOjExLjM2NzI2OCswNzowMCJ9.IROPPiWh5e073D5EVVibiPEnbjYl9GxdnEoMFtOmgdo",
-  },
-});
 
-httpClient.interceptors.response.use(
-  (response) => {
-    console.log(">>>>>>>>>>>>>", response);
-    // const { data } = response;
 
-    if (response?.data?.data?.items) {
-      return {
-        ...response,
-        data: response?.data?.data?.items,
-      };
-    }
-    if (response?.data?.data) {
-      return {
-        ...response,
-        data: response?.data?.data,
-      };
-    }
-    return {
-      ...response,
-    };
-  },
-  (error) => {
-    const customError = {
-      ...error,
-      message: error.response?.data?.message,
-      statusCode: error.response?.status,
-    };
+// import nookies from "nookies";
 
-    return Promise.reject(customError);
-  },
-);
 
 export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
   noLayout?: boolean;
@@ -112,15 +79,19 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout): JSX.Element {
           <Refine
             routerProvider={routerProvider}
             dataProvider={{
-              default: dataProvider(API_URL, httpClient as any),
-              articles: dataProvider("", httpClient as any),
+              // default: dataProvider(API_URL),
+              default: dataProvider("", apiInstance as any),
+              // articles: dataProvider("", apiInstance as any),
+              // users: dataProvider("", apiInstance as any),
+            // routerProvider={routerProvider}
+              
             }}
             notificationProvider={notificationProvider}
             authProvider={authProvider}
             resources={[
               {
                 meta: {
-                  dataProviderName: "articles",
+                  // dataProviderName: "articles",
                   canDelete: true,
                   label: "Articles",
                   icon: <NotificationOutlined />,
@@ -132,25 +103,52 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout): JSX.Element {
                 show: "/articles/show/:id",
               },
               {
-                name: "blog_posts",
-                list: "/blog-posts",
-                create: "/blog-posts/create",
-                edit: "/blog-posts/edit/:id",
-                show: "/blog-posts/show/:id",
                 meta: {
-                  canDelete: true,
+                  // dataProviderName: "users",
+                  // canDelete: true,
+                  label: "Users",
+                  icon: <UserOutlined />,
                 },
+                name: "users",
+                list: "/users",
+                // create: "/users/create",
+                edit: "/users/edit/:id",
+                show: "/users/show/:id",
               },
+
               {
-                name: "categories",
-                list: "/categories",
-                create: "/categories/create",
-                edit: "/categories/edit/:id",
-                show: "/categories/show/:id",
                 meta: {
                   canDelete: true,
+                  label: "Roles",
+                  icon: <UserSwitchOutlined />,
                 },
+                name: "roles",
+                list: "/roles",
+                create: "/roles/create",
+                edit: "/roles/edit/:id",
+                show: "/roles/show/:id",
               },
+
+              // {
+              //   name: "blog_posts",
+              //   list: "/blog-posts",
+              //   create: "/blog-posts/create",
+              //   edit: "/blog-posts/edit/:id",
+              //   show: "/blog-posts/show/:id",
+              //   meta: {
+              //     canDelete: true,
+              //   },
+              // },
+              // {
+              //   name: "categories",
+              //   list: "/categories",
+              //   create: "/categories/create",
+              //   edit: "/categories/edit/:id",
+              //   show: "/categories/show/:id",
+              //   meta: {
+              //     canDelete: true,
+              //   },
+              // },
             ]}
             options={{
               syncWithLocation: true,

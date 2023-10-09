@@ -23,6 +23,10 @@ module.exports = () => {
         source: "/api/v1/articles/:p*",
         destination: "http://157.245.198.237:8080/api/v1/articles/:p*",
       },
+      {
+        source: "/api/v1/:p*",
+        destination: "http://157.245.198.237:8080/api/v1/:p*",
+      }
     ];
   };
   return {

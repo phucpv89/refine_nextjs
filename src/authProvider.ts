@@ -29,9 +29,10 @@ export const authProvider: AuthBindings = {
         password: password,
         email: email,
       });
+      console.log("login resp", resp);
 
-      const { data, code } = resp as any;
-      if (code === 1 && data) {
+      const { data } = resp as any;
+      if (data) {
         nookies.set(null, "auth", JSON.stringify(data), {
           maxAge: 30 * 24 * 60 * 60,
           path: "/",

@@ -1,9 +1,9 @@
-import { AntdEditInferencer } from "@refinedev/inferencer/antd";
+import { AntdCreateInferencer } from "@refinedev/inferencer/antd";
 import { GetServerSideProps } from "next";
 import { authProvider } from "src/authProvider";
 
-export default function CategoryEdit() {
-  return <ArticleEdit />;
+export default function CategoryCreate() {
+  return <RoleCreate />;
 }
 
 export const getServerSideProps: GetServerSideProps<{}> = async (context) => {
@@ -26,29 +26,16 @@ export const getServerSideProps: GetServerSideProps<{}> = async (context) => {
 
 import React from "react";
 import { IResourceComponentsProps } from "@refinedev/core";
-import { Edit, useForm } from "@refinedev/antd";
+import { Create, useForm } from "@refinedev/antd";
 import { Form, Input, DatePicker, Checkbox } from "antd";
 import dayjs from "dayjs";
 
-export const ArticleEdit: React.FC<IResourceComponentsProps> = () => {
+export const RoleCreate: React.FC<IResourceComponentsProps> = () => {
     const { formProps, saveButtonProps, queryResult } = useForm();
 
-    const articlesData = queryResult?.data?.data;
-
     return (
-        <Edit saveButtonProps={saveButtonProps}>
+        <Create saveButtonProps={saveButtonProps}>
             <Form {...formProps} layout="vertical">
-                <Form.Item
-                    label="Id"
-                    name={["id"]}
-                    rules={[
-                        {
-                            required: true,
-                        },
-                    ]}
-                >
-                    <Input readOnly disabled />
-                </Form.Item>
                 {/* <Form.Item
                     label="Created At"
                     name={["created_at"]}
@@ -78,8 +65,8 @@ export const ArticleEdit: React.FC<IResourceComponentsProps> = () => {
                     <DatePicker />
                 </Form.Item> */}
                 <Form.Item
-                    label="Title"
-                    name={["title"]}
+                    label="Name"
+                    name={["name"]}
                     rules={[
                         {
                             required: true,
@@ -89,53 +76,18 @@ export const ArticleEdit: React.FC<IResourceComponentsProps> = () => {
                     <Input />
                 </Form.Item>
                 <Form.Item
-                    label="Content"
-                    name={["content"]}
-                    rules={[
-                        {
-                            required: true,
-                        },
-                    ]}
-                >
-                    <Input />
-                </Form.Item>
-                <Form.Item
-                    label="Is Published"
+                    label="Enabled"
                     valuePropName="checked"
-                    name={["is_published"]}
+                    name={["enabled"]}
                     rules={[
                         {
                             required: true,
                         },
                     ]}
                 >
-                    <Checkbox>Is Published</Checkbox>
+                    <Checkbox>Enabled</Checkbox>
                 </Form.Item>
-                <>
-                    {(articlesData?.audios as any[])?.map((item, index) => (
-                        <Form.Item
-                            key={index}
-                            label="Audios"
-                            name={["audios", index, "name"]}
-                        >
-                            <Input type="text" />
-                        </Form.Item>
-                    ))}
-                </>
-
-                <>
-                    {(articlesData?.images as any[])?.map((item, index) => (
-                        <Form.Item
-                            key={index}
-                            label="Images"
-                            name={["images", index, "url"]}
-                        >
-                            <Input type="text" />
-                        </Form.Item>
-                    ))}
-                </>
             </Form>
-        </Edit>
+        </Create>
     );
 };
-

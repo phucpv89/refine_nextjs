@@ -3,7 +3,7 @@ import { GetServerSideProps } from "next";
 import { authProvider } from "src/authProvider";
 
 export default function CategoryList() {
-  return <ArticleList />;
+  return <RoleList />;
 }
 
 export const getServerSideProps: GetServerSideProps<{}> = async (context) => {
@@ -35,11 +35,10 @@ import {
     DeleteButton,
     DateField,
     BooleanField,
-    TagField,
 } from "@refinedev/antd";
 import { Table, Space } from "antd";
 
-export const ArticleList: React.FC<IResourceComponentsProps> = () => {
+export const RoleList: React.FC<IResourceComponentsProps> = () => {
     const { tableProps } = useTable({
         syncWithLocation: true,
     });
@@ -58,35 +57,11 @@ export const ArticleList: React.FC<IResourceComponentsProps> = () => {
                     title="Updated At"
                     render={(value: any) => <DateField value={value} />}
                 />
-                <Table.Column dataIndex="title" title="Title" />
-                <Table.Column dataIndex="content" title="Content" />
-
+                <Table.Column dataIndex="name" title="Name" />
                 <Table.Column
-                    dataIndex={["is_published"]}
-                    title="Is Published"
+                    dataIndex={["enabled"]}
+                    title="Enabled"
                     render={(value: any) => <BooleanField value={value} />}
-                />
-                <Table.Column
-                    dataIndex="audios"
-                    title="Audios"
-                    render={(value: any[]) => (
-                        <>
-                            {value?.map((item) => (
-                                <TagField value={item?.name} key={item?.name} />
-                            ))}
-                        </>
-                    )}
-                />
-                <Table.Column
-                    dataIndex="images"
-                    title="Images"
-                    render={(value: any[]) => (
-                        <>
-                            {value?.map((item) => (
-                                <TagField value={item?.url} key={item?.url} />
-                            ))}
-                        </>
-                    )}
                 />
                 <Table.Column
                     title="Actions"

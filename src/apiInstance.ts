@@ -2,12 +2,12 @@ import axios from "axios";
 
 import { AxiosInstance } from "axios";
 
+import nookies from "nookies";
+
 const TIMEOUT = 20000;
 // axios.defaults.baseURL = "http://157.245.198.237:8080/api/v1";
 axios.defaults.baseURL = "/api/v1";
 axios.defaults.headers.common = {};
-
-
 
 const instance = axios.create({
   timeout: TIMEOUT,
@@ -18,6 +18,11 @@ const instance = axios.create({
 
 instance.interceptors.request.use(
   function (config) {
+    const auth = nookies.get()["auth"];
+    if (auth) {
+      const parsedUser = JSON.parse(auth);
+      config.headers['Authorization'] = `Bearer ${parsedUser.token}`;
+    }
     return config;
   },
   function (error) {
@@ -26,17 +31,36 @@ instance.interceptors.request.use(
 );
 
 instance.interceptors.response.use(
-  function (response) {
-    if (response?.status === 200) {
-      return response.data;
+  (response) => {
+    console.log("interceptors.response", response);
+    // const { data } = response;
+
+    console.log(">>>>>>>>>>>>", !!response?.data?.data?.items)
+
+    if (response?.data?.data?.items) {
+      return {
+        ...response,
+        data: response?.data?.data?.items,
+      };
     }
-    return Promise.reject(response?.data ?? response);
+    if (response?.data?.data) {
+      return {
+        ...response,
+        data: response?.data?.data,
+      };
+    }
+    return {
+      ...response,
+    };
   },
-  function (error) {
-    if (error.response) {
-      return Promise.reject(error.response);
-    }
-    return Promise.reject(error);
+  (error) => {
+    const customError = {
+      ...error,
+      message: error.response?.data?.message,
+      statusCode: error.response?.status,
+    };
+
+    return Promise.reject(customError);
   },
 );
 
