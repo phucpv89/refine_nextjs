@@ -8,9 +8,9 @@ export default function Register() {
   return (
     <AuthPage
       type="register"
-      formProps={{
-        initialValues: { email: "phucpv89@gmail.com", password: "abc" },
-      }}
+      // formProps={{
+      //   initialValues: { email: "phucpv89@gmail.com", password: "abc" },
+      // }}
       title={<CustomizeThemedTitle />}
     />
   );

@@ -8,9 +8,9 @@ export default function Login() {
   return (
     <AuthPage
       type="login"
-      formProps={{
-        initialValues: { email: "nghialt@vng.com.vn", password: "abc" },
-      }}
+      // formProps={{
+      //   initialValues: { email: "nghialt@vng.com.vn", password: "abc" },
+      // }}
       title={<CustomizeThemedTitle />}
     />
   );
