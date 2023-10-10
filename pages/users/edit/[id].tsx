@@ -131,7 +131,7 @@ export const UserEdit: React.FC<IResourceComponentsProps> = () => {
                         };
                     }}
                     getValueFromEvent={(selected: string[]) => {
-                        return selected?.map((item) => ({ id: item }));
+                        return selected?.map((item) => ({ id: item, enabled: true }));
                     }}
                 >
                     <Select mode="multiple" {...rolesSelectProps} />
