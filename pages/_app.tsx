@@ -25,18 +25,21 @@ import apiInstance from "src/apiInstance";
 import axios from "axios";
 import { ConfigProvider } from "antd";
 import CustomizeThemedTitle from "@components/CustomizeThemedTitle";
-import { DashboardOutlined, NotificationOutlined, UserOutlined, UserSwitchOutlined } from "@ant-design/icons";
+import {
+  DashboardOutlined,
+  NotificationOutlined,
+  UserOutlined,
+  UserSwitchOutlined,
+} from "@ant-design/icons";
 
 const API_URL = "https://api.fake-rest.refine.dev";
 
 import nookies from "nookies";
+import { Devices, User } from "iconsax-react";
 
 // const API_URL = "";
 
-
-
 // import nookies from "nookies";
-
 
 export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
   noLayout?: boolean;
@@ -79,16 +82,29 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout): JSX.Element {
           <Refine
             routerProvider={routerProvider}
             dataProvider={{
-              // default: dataProvider(API_URL),
+              demo: dataProvider(API_URL),
               default: dataProvider("", apiInstance as any),
               // articles: dataProvider("", apiInstance as any),
               // users: dataProvider("", apiInstance as any),
-            // routerProvider={routerProvider}
-              
+              // routerProvider={routerProvider}
             }}
             notificationProvider={notificationProvider}
             authProvider={authProvider}
             resources={[
+              {
+                name: "group_users",
+                meta: {
+                  label: "Người dùng",
+                  icon: <User size="14" />,
+                },
+              },
+              {
+                name: "group_devices",
+                meta: {
+                  label: "Thiết bị",
+                  icon: <Devices size="14" />,
+                },
+              },
               {
                 meta: {
                   // dataProviderName: "articles",
@@ -106,8 +122,8 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout): JSX.Element {
                 meta: {
                   // dataProviderName: "users",
                   // canDelete: true,
-                  label: "Users",
-                  icon: <UserOutlined />,
+                  label: "Quản lý người dùng ",
+                  parent: "group_users",
                 },
                 name: "users",
                 list: "/users",
@@ -119,14 +135,44 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout): JSX.Element {
               {
                 meta: {
                   canDelete: true,
-                  label: "Roles",
-                  icon: <UserSwitchOutlined />,
+                  label: "Quản lý quyền",
+                  parent: "group_users",
                 },
                 name: "roles",
                 list: "/roles",
                 create: "/roles/create",
                 edit: "/roles/edit/:id",
                 show: "/roles/show/:id",
+              },
+              {
+                meta: {
+                  canDelete: true,
+                  label: "Quản lý thiết bị",
+                  // icon: <Devices size="14" />,
+                  parent: "group_devices",
+                },
+                name: "devices",
+                list: "/devices",
+                create: "/devices/create",
+                edit: "/devices/edit/:id",
+                show: "/devices/show/:id",
+              },
+              {
+                meta: {
+                  canDelete: true,
+                  label: "Quản lý nhóm",
+                  // icon: <Devices size="14" />,
+                  parent: "group_devices",
+                },
+                name: "groupdevices",
+                list: "/groupdevices",
+                create: "/groupdevices/create",
+                edit: "/groupdevices/edit/:id",
+                // show: "/groupdevices/show/:id",
+              },
+
+              {
+                name: "devices/types",
               },
 
               // {
@@ -137,23 +183,30 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout): JSX.Element {
               //   show: "/blog-posts/show/:id",
               //   meta: {
               //     canDelete: true,
+              //     dataProviderName: "demo",
               //   },
               // },
-              // {
-              //   name: "categories",
-              //   list: "/categories",
-              //   create: "/categories/create",
-              //   edit: "/categories/edit/:id",
-              //   show: "/categories/show/:id",
-              //   meta: {
-              //     canDelete: true,
-              //   },
-              // },
+              {
+                name: "categories",
+                // list: "/categories",
+                // create: "/categories/create",
+                // edit: "/categories/edit/:id",
+                // show: "/categories/show/:id",
+                meta: {
+                  canDelete: true,
+                  dataProviderName: "demo",
+                },
+              },
             ]}
             options={{
               syncWithLocation: true,
               warnWhenUnsavedChanges: true,
               projectId: "o6kPX8-T9nKSv-IA1YWk",
+              textTransformers: {
+                humanize: (text) => text,
+                plural: (text) => text,
+                singular: (text) => text,
+              },
             }}>
             {renderComponent()}
             {/* <RefineKbar /> */}

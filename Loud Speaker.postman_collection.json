@@ -1,0 +1,2055 @@
+{
+	"info": {
+		"_postman_id": "03f1d08a-4c2c-4217-8330-14f9cdd807f1",
+		"name": "Loud Speaker",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24166556"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"password\": \"abc\",\n    \"email\": \"nghialt@vng.com.vn\"\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/api/v1/auth/login",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "admin login",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"password\": \"abc\",\n    \"email\": \"nghialt@vng.com.vn\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v1/auth/login",
+							
+							"host": [
+								"{{base_url}}"
+							],
+							
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 07 Oct 2023 09:54:42 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "978"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"code\": 1,\n    \"data\": {\n        \"id\": 1,\n        \"created_at\": \"2023-10-07T16:50:08.434+07:00\",\n        \"updated_at\": \"2023-10-07T16:50:08.434+07:00\",\n        \"deleted_at\": null,\n        \"name\": \"Nghia\",\n        \"email\": \"nghialt@vng.com.vn\",\n        \"is_active\": true,\n        \"last_login_at\": \"2023-10-07T16:54:42.555087+07:00\",\n        \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im5naGlhbHRAdm5nLmNvbS52biIsImxhc3RfbG9naW5fYXQiOiIyMDIzLTEwLTA3VDE2OjU0OjQyLjU1NTA4NyswNzowMCIsInBlcm1pc3Npb24iOlt7Iml0ZW0iOiJhcnRpY2xlIiwidmlldyI6dHJ1ZSwiaW5zZXJ0Ijp0cnVlLCJ1cGRhdGUiOnRydWUsImRlbGV0ZSI6dHJ1ZX0seyJpdGVtIjoicm9sZSIsInZpZXciOnRydWUsImluc2VydCI6dHJ1ZSwidXBkYXRlIjp0cnVlLCJkZWxldGUiOnRydWV9LHsiaXRlbSI6InVzZXIiLCJ2aWV3Ijp0cnVlLCJpbnNlcnQiOnRydWUsInVwZGF0ZSI6dHJ1ZSwiZGVsZXRlIjp0cnVlfV19.dYcFic6M5gjBkB2aAq1cisJdyFYJZ6UjdRwPpI9Sazw\",\n        \"permission\": [\n            {\n                \"item\": \"article\",\n                \"view\": true,\n                \"insert\": true,\n                \"update\": true,\n                \"delete\": true\n            },\n            {\n                \"item\": \"role\",\n                \"view\": true,\n                \"insert\": true,\n                \"update\": true,\n                \"delete\": true\n            },\n            {\n                \"item\": \"user\",\n                \"view\": true,\n                \"insert\": true,\n                \"update\": true,\n                \"delete\": true\n            }\n        ]\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "Nghia",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "abc",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "nghialt@vng.com.vn",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url}}/api/v1/auth/register",
+					
+					"host": [
+						"{{base_url}}"
+					],
+					
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Register",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Nghia",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "abc",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "nghialt@vng.com.vn",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v1/auth/register",
+							
+							"host": [
+								"{{base_url}}"
+							],
+							
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 07 Oct 2023 09:50:08 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "216"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"code\": 1,\n    \"data\": {\n        \"id\": 1,\n        \"created_at\": \"2023-10-07T16:50:08.434+07:00\",\n        \"updated_at\": \"2023-10-07T16:50:08.434+07:00\",\n        \"deleted_at\": null,\n        \"name\": \"Nghia\",\n        \"email\": \"nghialt@vng.com.vn\",\n        \"is_active\": true,\n        \"last_login_at\": null\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Me",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im5naGlhbHRAdm5nLmNvbS52biIsImxhc3RfbG9naW5fYXQiOiIyMDIzLTEwLTA3VDE2OjU0OjQyLjU1NTA4NyswNzowMCIsInBlcm1pc3Npb24iOlt7Iml0ZW0iOiJhcnRpY2xlIiwidmlldyI6dHJ1ZSwiaW5zZXJ0Ijp0cnVlLCJ1cGRhdGUiOnRydWUsImRlbGV0ZSI6dHJ1ZX0seyJpdGVtIjoicm9sZSIsInZpZXciOnRydWUsImluc2VydCI6dHJ1ZSwidXBkYXRlIjp0cnVlLCJkZWxldGUiOnRydWV9LHsiaXRlbSI6InVzZXIiLCJ2aWV3Ijp0cnVlLCJpbnNlcnQiOnRydWUsInVwZGF0ZSI6dHJ1ZSwiZGVsZXRlIjp0cnVlfV19.dYcFic6M5gjBkB2aAq1cisJdyFYJZ6UjdRwPpI9Sazw"
+					},
+					{
+						"key": "Origin",
+						"value": "test.com",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/api/v1/auth/me",
+					
+					"host": [
+						"{{base_url}}"
+					],
+					
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"me"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Me",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im5naGlhbHRAdm5nLmNvbS52biIsImxhc3RfbG9naW5fYXQiOiIyMDIzLTEwLTA3VDE2OjU0OjQyLjU1NTA4NyswNzowMCIsInBlcm1pc3Npb24iOlt7Iml0ZW0iOiJhcnRpY2xlIiwidmlldyI6dHJ1ZSwiaW5zZXJ0Ijp0cnVlLCJ1cGRhdGUiOnRydWUsImRlbGV0ZSI6dHJ1ZX0seyJpdGVtIjoicm9sZSIsInZpZXciOnRydWUsImluc2VydCI6dHJ1ZSwidXBkYXRlIjp0cnVlLCJkZWxldGUiOnRydWV9LHsiaXRlbSI6InVzZXIiLCJ2aWV3Ijp0cnVlLCJpbnNlcnQiOnRydWUsInVwZGF0ZSI6dHJ1ZSwiZGVsZXRlIjp0cnVlfV19.dYcFic6M5gjBkB2aAq1cisJdyFYJZ6UjdRwPpI9Sazw"
+							},
+							{
+								"key": "Origin",
+								"value": "test.com",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/v1/auth/me",
+							
+							"host": [
+								"{{base_url}}"
+							],
+							
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"me"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 07 Oct 2023 09:55:45 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "216"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"code\": 1,\n    \"data\": {\n        \"id\": 1,\n        \"created_at\": \"2023-10-07T16:50:08.434+07:00\",\n        \"updated_at\": \"2023-10-07T16:50:08.434+07:00\",\n        \"deleted_at\": null,\n        \"name\": \"Nghia\",\n        \"email\": \"nghialt@vng.com.vn\",\n        \"is_active\": true,\n        \"last_login_at\": null\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Create Article",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im5naGlhbHRAdm5nLmNvbS52biIsImxhc3RfbG9naW5fYXQiOiIyMDIzLTEwLTA4VDE2OjExOjA5LjAwMzgwMyswNzowMCIsInBlcm1pc3Npb25zIjpbeyJpdGVtIjoiYXJ0aWNsZSIsInZpZXciOnRydWUsImluc2VydCI6dHJ1ZSwidXBkYXRlIjp0cnVlLCJkZWxldGUiOnRydWV9LHsiaXRlbSI6InJvbGUiLCJ2aWV3Ijp0cnVlLCJpbnNlcnQiOnRydWUsInVwZGF0ZSI6dHJ1ZSwiZGVsZXRlIjp0cnVlfSx7Iml0ZW0iOiJ1c2VyIiwidmlldyI6dHJ1ZSwiaW5zZXJ0Ijp0cnVlLCJ1cGRhdGUiOnRydWUsImRlbGV0ZSI6dHJ1ZX1dfQ.x9pGXqwhIKwL8gO1NUBJ6XEsZiXMtVEJ-8i6BNukfEc"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"title\",\n    \"content\": \"content\",\n    \"audios\": [\n        {\n            \"name\": \"name test\",\n            \"url\": \"url test\"\n        }\n    ],\n    \"images\": [\n        {\n            \"name\": \"image name test\",\n            \"url\": \"image url test\"\n        }\n    ]\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/api/v1/articles",
+					
+					"host": [
+						"{{base_url}}"
+					],
+					
+					"path": [
+						"api",
+						"v1",
+						"articles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Article",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im5naGlhbHRAdm5nLmNvbS52biIsImxhc3RfbG9naW5fYXQiOiIyMDIzLTA5LTI5VDE5OjExOjExLjM2NzI2OCswNzowMCJ9.IROPPiWh5e073D5EVVibiPEnbjYl9GxdnEoMFtOmgdo"
+					},
+					{
+						"key": "Origin",
+						"value": "test.com",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/api/v1/articles/1",
+					
+					"host": [
+						"{{base_url}}"
+					],
+					
+					"path": [
+						"api",
+						"v1",
+						"articles",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Article",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im5naGlhbHRAdm5nLmNvbS52biIsImxhc3RfbG9naW5fYXQiOiIyMDIzLTEwLTA4VDE2OjExOjA5LjAwMzgwMyswNzowMCIsInBlcm1pc3Npb25zIjpbeyJpdGVtIjoiYXJ0aWNsZSIsInZpZXciOnRydWUsImluc2VydCI6dHJ1ZSwidXBkYXRlIjp0cnVlLCJkZWxldGUiOnRydWV9LHsiaXRlbSI6InJvbGUiLCJ2aWV3Ijp0cnVlLCJpbnNlcnQiOnRydWUsInVwZGF0ZSI6dHJ1ZSwiZGVsZXRlIjp0cnVlfSx7Iml0ZW0iOiJ1c2VyIiwidmlldyI6dHJ1ZSwiaW5zZXJ0Ijp0cnVlLCJ1cGRhdGUiOnRydWUsImRlbGV0ZSI6dHJ1ZX1dfQ.x9pGXqwhIKwL8gO1NUBJ6XEsZiXMtVEJ-8i6BNukfEc"
+							},
+							{
+								"key": "Origin",
+								"value": "test.com",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/v1/articles/1",
+							
+							"host": [
+								"{{base_url}}"
+							],
+							
+							"path": [
+								"api",
+								"v1",
+								"articles",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 09 Oct 2023 14:20:13 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "867"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"code\": 1,\n    \"data\": {\n        \"id\": 1,\n        \"created_at\": \"2023-10-08T16:13:46.477+07:00\",\n        \"updated_at\": \"2023-10-08T16:13:46.477+07:00\",\n        \"deleted_at\": null,\n        \"title\": \"title\",\n        \"content\": \"content\",\n        \"creator_id\": 1,\n        \"is_published\": false,\n        \"audios\": [],\n        \"images\": [\n            {\n                \"id\": 1,\n                \"created_at\": \"2023-10-08T23:27:19.675+07:00\",\n                \"updated_at\": \"2023-10-08T23:27:19.675+07:00\",\n                \"deleted_at\": null,\n                \"article_id\": 1,\n                \"path\": \"\",\n                \"enabled\": false,\n                \"type\": \"image\"\n            },\n            {\n                \"id\": 2,\n                \"created_at\": \"2023-10-08T23:28:10.859+07:00\",\n                \"updated_at\": \"2023-10-08T23:28:10.859+07:00\",\n                \"deleted_at\": null,\n                \"article_id\": 1,\n                \"path\": \"medias/1-1696782490830-Screenshot 2023-10-07 at 17.49.08.png\",\n                \"enabled\": false,\n                \"type\": \"image\"\n            },\n            {\n                \"id\": 3,\n                \"created_at\": \"2023-10-09T07:26:10.007+07:00\",\n                \"updated_at\": \"2023-10-09T07:26:10.007+07:00\",\n                \"deleted_at\": null,\n                \"article_id\": 1,\n                \"path\": \"medias/1-1696811169978-Screenshot 2023-10-07 at 17.49.08.png\",\n                \"enabled\": true,\n                \"type\": \"image\"\n            }\n        ]\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "List Articles",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im5naGlhbHRAdm5nLmNvbS52biIsImxhc3RfbG9naW5fYXQiOiIyMDIzLTEwLTIyVDEwOjM1OjQ2LjUzODIyNSswNzowMCIsInBlcm1pc3Npb25zIjpbeyJpdGVtIjoiYXJ0aWNsZSIsInZpZXciOnRydWUsImluc2VydCI6dHJ1ZSwidXBkYXRlIjp0cnVlLCJkZWxldGUiOnRydWV9LHsiaXRlbSI6ImRldmljZSIsInZpZXciOnRydWUsImluc2VydCI6dHJ1ZSwidXBkYXRlIjp0cnVlLCJkZWxldGUiOnRydWV9LHsiaXRlbSI6InJvbGUiLCJ2aWV3Ijp0cnVlLCJpbnNlcnQiOnRydWUsInVwZGF0ZSI6dHJ1ZSwiZGVsZXRlIjp0cnVlfSx7Iml0ZW0iOiJzY2hlZHVsZSIsInZpZXciOnRydWUsImluc2VydCI6dHJ1ZSwidXBkYXRlIjp0cnVlLCJkZWxldGUiOnRydWV9LHsiaXRlbSI6InVzZXIiLCJ2aWV3Ijp0cnVlLCJpbnNlcnQiOnRydWUsInVwZGF0ZSI6dHJ1ZSwiZGVsZXRlIjp0cnVlfV19.83cPfghBbLs-ZElHhTFfRdLq8GcIP1eCV88E1VVYFT0"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/api/v1/articles",
+					
+					"host": [
+						"{{base_url}}"
+					],
+					
+					"path": [
+						"api",
+						"v1",
+						"articles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Article",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im5naGlhbHRAdm5nLmNvbS52biIsImxhc3RfbG9naW5fYXQiOiIyMDIzLTA5LTI5VDE5OjExOjExLjM2NzI2OCswNzowMCJ9.IROPPiWh5e073D5EVVibiPEnbjYl9GxdnEoMFtOmgdo"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"id\":3, \"title\": \"title\", \"content\": \"content\", \"images\": [{\"name\": \"image name test\", \"url\": \"image url test\"}]}"
+				},
+				"url": {
+					"raw": "{{base_url}}/api/v1/articles/3",
+					
+					"host": [
+						"{{base_url}}"
+					],
+					
+					"path": [
+						"api",
+						"v1",
+						"articles",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get User",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im5naGlhbHRAdm5nLmNvbS52biIsImxhc3RfbG9naW5fYXQiOiIyMDIzLTEwLTA3VDE2OjU0OjQyLjU1NTA4NyswNzowMCIsInBlcm1pc3Npb24iOlt7Iml0ZW0iOiJhcnRpY2xlIiwidmlldyI6dHJ1ZSwiaW5zZXJ0Ijp0cnVlLCJ1cGRhdGUiOnRydWUsImRlbGV0ZSI6dHJ1ZX0seyJpdGVtIjoicm9sZSIsInZpZXciOnRydWUsImluc2VydCI6dHJ1ZSwidXBkYXRlIjp0cnVlLCJkZWxldGUiOnRydWV9LHsiaXRlbSI6InVzZXIiLCJ2aWV3Ijp0cnVlLCJpbnNlcnQiOnRydWUsInVwZGF0ZSI6dHJ1ZSwiZGVsZXRlIjp0cnVlfV19.dYcFic6M5gjBkB2aAq1cisJdyFYJZ6UjdRwPpI9Sazw"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/api/v1/users/9",
+					
+					"host": [
+						"{{base_url}}"
+					],
+					
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"9"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update User",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im5naGlhbHRAdm5nLmNvbS52biIsImxhc3RfbG9naW5fYXQiOiIyMDIzLTEwLTA4VDE2OjExOjA5LjAwMzgwMyswNzowMCIsInBlcm1pc3Npb25zIjpbeyJpdGVtIjoiYXJ0aWNsZSIsInZpZXciOnRydWUsImluc2VydCI6dHJ1ZSwidXBkYXRlIjp0cnVlLCJkZWxldGUiOnRydWV9LHsiaXRlbSI6InJvbGUiLCJ2aWV3Ijp0cnVlLCJpbnNlcnQiOnRydWUsInVwZGF0ZSI6dHJ1ZSwiZGVsZXRlIjp0cnVlfSx7Iml0ZW0iOiJ1c2VyIiwidmlldyI6dHJ1ZSwiaW5zZXJ0Ijp0cnVlLCJ1cGRhdGUiOnRydWUsImRlbGV0ZSI6dHJ1ZX1dfQ.x9pGXqwhIKwL8gO1NUBJ6XEsZiXMtVEJ-8i6BNukfEc"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 2,\n    \"name\": \"Nghia 1\",\n    \"email\": \"nghialt1@vng.com.vn\",\n    \"roles\": [\n        {\n            \"id\": 1,\n            \"enabled\": true\n        }\n    ]\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/api/v1/users/2",
+					
+					"host": [
+						"{{base_url}}"
+					],
+					
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Users",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im5naGlhbHRAdm5nLmNvbS52biIsImxhc3RfbG9naW5fYXQiOiIyMDIzLTEwLTAxVDIyOjM5OjM5LjQwNjk0OSswNzowMCIsInJvbGVzIjpbImFkbWluIl19.2_24ltvLUDRZ1XPnPHEh-zkJe_XJ6oxNyDAONNcXVms"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/api/v1/users",
+					
+					"host": [
+						"{{base_url}}"
+					],
+					
+					"path": [
+						"api",
+						"v1",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Roles",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im5naGlhbHRAdm5nLmNvbS52biIsImxhc3RfbG9naW5fYXQiOiIyMDIzLTEwLTA3VDE2OjU0OjQyLjU1NTA4NyswNzowMCIsInBlcm1pc3Npb24iOlt7Iml0ZW0iOiJhcnRpY2xlIiwidmlldyI6dHJ1ZSwiaW5zZXJ0Ijp0cnVlLCJ1cGRhdGUiOnRydWUsImRlbGV0ZSI6dHJ1ZX0seyJpdGVtIjoicm9sZSIsInZpZXciOnRydWUsImluc2VydCI6dHJ1ZSwidXBkYXRlIjp0cnVlLCJkZWxldGUiOnRydWV9LHsiaXRlbSI6InVzZXIiLCJ2aWV3Ijp0cnVlLCJpbnNlcnQiOnRydWUsInVwZGF0ZSI6dHJ1ZSwiZGVsZXRlIjp0cnVlfV19.dYcFic6M5gjBkB2aAq1cisJdyFYJZ6UjdRwPpI9Sazw"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/api/v1/roles",
+					
+					"host": [
+						"{{base_url}}"
+					],
+					
+					"path": [
+						"api",
+						"v1",
+						"roles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Items",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im5naGlhbHRAdm5nLmNvbS52biIsImxhc3RfbG9naW5fYXQiOiIyMDIzLTEwLTA3VDE2OjU0OjQyLjU1NTA4NyswNzowMCIsInBlcm1pc3Npb24iOlt7Iml0ZW0iOiJhcnRpY2xlIiwidmlldyI6dHJ1ZSwiaW5zZXJ0Ijp0cnVlLCJ1cGRhdGUiOnRydWUsImRlbGV0ZSI6dHJ1ZX0seyJpdGVtIjoicm9sZSIsInZpZXciOnRydWUsImluc2VydCI6dHJ1ZSwidXBkYXRlIjp0cnVlLCJkZWxldGUiOnRydWV9LHsiaXRlbSI6InVzZXIiLCJ2aWV3Ijp0cnVlLCJpbnNlcnQiOnRydWUsInVwZGF0ZSI6dHJ1ZSwiZGVsZXRlIjp0cnVlfV19.dYcFic6M5gjBkB2aAq1cisJdyFYJZ6UjdRwPpI9Sazw"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/api/v1/items",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"items"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "List Items",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im5naGlhbHRAdm5nLmNvbS52biIsImxhc3RfbG9naW5fYXQiOiIyMDIzLTEwLTA3VDE2OjU0OjQyLjU1NTA4NyswNzowMCIsInBlcm1pc3Npb24iOlt7Iml0ZW0iOiJhcnRpY2xlIiwidmlldyI6dHJ1ZSwiaW5zZXJ0Ijp0cnVlLCJ1cGRhdGUiOnRydWUsImRlbGV0ZSI6dHJ1ZX0seyJpdGVtIjoicm9sZSIsInZpZXciOnRydWUsImluc2VydCI6dHJ1ZSwidXBkYXRlIjp0cnVlLCJkZWxldGUiOnRydWV9LHsiaXRlbSI6InVzZXIiLCJ2aWV3Ijp0cnVlLCJpbnNlcnQiOnRydWUsInVwZGF0ZSI6dHJ1ZSwiZGVsZXRlIjp0cnVlfV19.dYcFic6M5gjBkB2aAq1cisJdyFYJZ6UjdRwPpI9Sazw"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/v1/items",
+							
+							"host": [
+								"{{base_url}}"
+							],
+							
+							"path": [
+								"api",
+								"v1",
+								"items"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 07 Oct 2023 14:30:45 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "102"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"code\": 1,\n    \"data\": {\n        \"pagination\": {\n            \"page\": 0,\n            \"size\": 0,\n            \"total_pages\": 0\n        },\n        \"items\": [\n            \"user\",\n            \"role\",\n            \"article\"\n        ]\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Create Role",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im5naGlhbHRAdm5nLmNvbS52biIsImxhc3RfbG9naW5fYXQiOiIyMDIzLTEwLTA3VDE2OjU0OjQyLjU1NTA4NyswNzowMCIsInBlcm1pc3Npb24iOlt7Iml0ZW0iOiJhcnRpY2xlIiwidmlldyI6dHJ1ZSwiaW5zZXJ0Ijp0cnVlLCJ1cGRhdGUiOnRydWUsImRlbGV0ZSI6dHJ1ZX0seyJpdGVtIjoicm9sZSIsInZpZXciOnRydWUsImluc2VydCI6dHJ1ZSwidXBkYXRlIjp0cnVlLCJkZWxldGUiOnRydWV9LHsiaXRlbSI6InVzZXIiLCJ2aWV3Ijp0cnVlLCJpbnNlcnQiOnRydWUsInVwZGF0ZSI6dHJ1ZSwiZGVsZXRlIjp0cnVlfV19.dYcFic6M5gjBkB2aAq1cisJdyFYJZ6UjdRwPpI9Sazw"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"dev\",\n    \"enabled\": true\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/api/v1/roles",
+					
+					"host": [
+						"{{base_url}}"
+					],
+					
+					"path": [
+						"api",
+						"v1",
+						"roles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Role",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im5naGlhbHRAdm5nLmNvbS52biIsImxhc3RfbG9naW5fYXQiOiIyMDIzLTEwLTIyVDEwOjM1OjQ2LjUzODIyNSswNzowMCIsInBlcm1pc3Npb25zIjpbeyJpdGVtIjoiYXJ0aWNsZSIsInZpZXciOnRydWUsImluc2VydCI6dHJ1ZSwidXBkYXRlIjp0cnVlLCJkZWxldGUiOnRydWV9LHsiaXRlbSI6ImRldmljZSIsInZpZXciOnRydWUsImluc2VydCI6dHJ1ZSwidXBkYXRlIjp0cnVlLCJkZWxldGUiOnRydWV9LHsiaXRlbSI6InJvbGUiLCJ2aWV3Ijp0cnVlLCJpbnNlcnQiOnRydWUsInVwZGF0ZSI6dHJ1ZSwiZGVsZXRlIjp0cnVlfSx7Iml0ZW0iOiJzY2hlZHVsZSIsInZpZXciOnRydWUsImluc2VydCI6dHJ1ZSwidXBkYXRlIjp0cnVlLCJkZWxldGUiOnRydWV9LHsiaXRlbSI6InVzZXIiLCJ2aWV3Ijp0cnVlLCJpbnNlcnQiOnRydWUsInVwZGF0ZSI6dHJ1ZSwiZGVsZXRlIjp0cnVlfV19.83cPfghBbLs-ZElHhTFfRdLq8GcIP1eCV88E1VVYFT0"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/api/v1/roles/6",
+					
+					"host": [
+						"{{base_url}}"
+					],
+					
+					"path": [
+						"api",
+						"v1",
+						"roles",
+						"6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Role",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im5naGlhbHRAdm5nLmNvbS52biIsImxhc3RfbG9naW5fYXQiOiIyMDIzLTA5LTI5VDE5OjExOjExLjM2NzI2OCswNzowMCJ9.IROPPiWh5e073D5EVVibiPEnbjYl9GxdnEoMFtOmgdo"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 7,\n    \"name\": \"dev\",\n    \"enabled\": true,\n    \"role_items\": [\n            {\n                \"item\": \"article\",\n                \"view\": true,\n                \"insert\": true,\n                \"update\": true,\n                \"delete\": true\n            },\n            {\n                \"item\": \"role\",\n                \"view\": true,\n                \"insert\": true,\n                \"update\": true,\n                \"delete\": true\n            },\n            {\n                \"item\": \"user\",\n                \"view\": true,\n                \"insert\": true,\n                \"update\": true,\n                \"delete\": true\n            }\n        ]\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/api/v1/roles/7",
+					
+					"host": [
+						"{{base_url}}"
+					],
+					
+					"path": [
+						"api",
+						"v1",
+						"roles",
+						"7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Media",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"warning": "This is a duplicate header and will be overridden by the Content-Type header generated by Postman.",
+						"key": "Content-Type",
+						"value": "multipart/form-data"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im5naGlhbHRAdm5nLmNvbS52biIsImxhc3RfbG9naW5fYXQiOiIyMDIzLTEwLTA4VDE2OjExOjA5LjAwMzgwMyswNzowMCIsInBlcm1pc3Npb25zIjpbeyJpdGVtIjoiYXJ0aWNsZSIsInZpZXciOnRydWUsImluc2VydCI6dHJ1ZSwidXBkYXRlIjp0cnVlLCJkZWxldGUiOnRydWV9LHsiaXRlbSI6InJvbGUiLCJ2aWV3Ijp0cnVlLCJpbnNlcnQiOnRydWUsInVwZGF0ZSI6dHJ1ZSwiZGVsZXRlIjp0cnVlfSx7Iml0ZW0iOiJ1c2VyIiwidmlldyI6dHJ1ZSwiaW5zZXJ0Ijp0cnVlLCJ1cGRhdGUiOnRydWUsImRlbGV0ZSI6dHJ1ZX1dfQ.x9pGXqwhIKwL8gO1NUBJ6XEsZiXMtVEJ-8i6BNukfEc"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/Users/lap14571-local/Desktop/Screenshot 2023-10-07 at 17.49.08.png"
+						},
+						{
+							"key": "article_id",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "type",
+							"value": "image",
+							"type": "text"
+						},
+						{
+							"key": "enabled",
+							"value": "true",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url}}/api/v1/medias",
+					
+					"host": [
+						"{{base_url}}"
+					],
+					
+					"path": [
+						"api",
+						"v1",
+						"medias"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Media",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"warning": "This is a duplicate header and will be overridden by the Content-Type header generated by Postman.",
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im5naGlhbHRAdm5nLmNvbS52biIsImxhc3RfbG9naW5fYXQiOiIyMDIzLTEwLTA4VDE2OjExOjA5LjAwMzgwMyswNzowMCIsInBlcm1pc3Npb25zIjpbeyJpdGVtIjoiYXJ0aWNsZSIsInZpZXciOnRydWUsImluc2VydCI6dHJ1ZSwidXBkYXRlIjp0cnVlLCJkZWxldGUiOnRydWV9LHsiaXRlbSI6InJvbGUiLCJ2aWV3Ijp0cnVlLCJpbnNlcnQiOnRydWUsInVwZGF0ZSI6dHJ1ZSwiZGVsZXRlIjp0cnVlfSx7Iml0ZW0iOiJ1c2VyIiwidmlldyI6dHJ1ZSwiaW5zZXJ0Ijp0cnVlLCJ1cGRhdGUiOnRydWUsImRlbGV0ZSI6dHJ1ZX1dfQ.x9pGXqwhIKwL8gO1NUBJ6XEsZiXMtVEJ-8i6BNukfEc"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 1,\n    \"article_id\": 1,\n    \"enabled\": true,\n    \"type\": \"image\"\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/api/v1/medias/1",
+					
+					"host": [
+						"{{base_url}}"
+					],
+					
+					"path": [
+						"api",
+						"v1",
+						"medias",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Update Media",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [
+							{
+								"warning": "This is a duplicate header and will be overridden by the Content-Type header generated by Postman.",
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im5naGlhbHRAdm5nLmNvbS52biIsImxhc3RfbG9naW5fYXQiOiIyMDIzLTEwLTA4VDE2OjExOjA5LjAwMzgwMyswNzowMCIsInBlcm1pc3Npb25zIjpbeyJpdGVtIjoiYXJ0aWNsZSIsInZpZXciOnRydWUsImluc2VydCI6dHJ1ZSwidXBkYXRlIjp0cnVlLCJkZWxldGUiOnRydWV9LHsiaXRlbSI6InJvbGUiLCJ2aWV3Ijp0cnVlLCJpbnNlcnQiOnRydWUsInVwZGF0ZSI6dHJ1ZSwiZGVsZXRlIjp0cnVlfSx7Iml0ZW0iOiJ1c2VyIiwidmlldyI6dHJ1ZSwiaW5zZXJ0Ijp0cnVlLCJ1cGRhdGUiOnRydWUsImRlbGV0ZSI6dHJ1ZX1dfQ.x9pGXqwhIKwL8gO1NUBJ6XEsZiXMtVEJ-8i6BNukfEc"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 1,\n    \"article_id\": 1,\n    \"enabled\": true,\n    \"type\": \"image\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v1/medias/1",
+							
+							"host": [
+								"{{base_url}}"
+							],
+							
+							"path": [
+								"api",
+								"v1",
+								"medias",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 09 Oct 2023 14:36:35 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "49"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"code\": 1,\n    \"data\": {\n        \"RowsAffected\": 1,\n        \"Error\": null\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Create Device",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im5naGlhbHRAdm5nLmNvbS52biIsImxhc3RfbG9naW5fYXQiOiIyMDIzLTEwLTIyVDEwOjM1OjQ2LjUzODIyNSswNzowMCIsInBlcm1pc3Npb25zIjpbeyJpdGVtIjoiYXJ0aWNsZSIsInZpZXciOnRydWUsImluc2VydCI6dHJ1ZSwidXBkYXRlIjp0cnVlLCJkZWxldGUiOnRydWV9LHsiaXRlbSI6ImRldmljZSIsInZpZXciOnRydWUsImluc2VydCI6dHJ1ZSwidXBkYXRlIjp0cnVlLCJkZWxldGUiOnRydWV9LHsiaXRlbSI6InJvbGUiLCJ2aWV3Ijp0cnVlLCJpbnNlcnQiOnRydWUsInVwZGF0ZSI6dHJ1ZSwiZGVsZXRlIjp0cnVlfSx7Iml0ZW0iOiJzY2hlZHVsZSIsInZpZXciOnRydWUsImluc2VydCI6dHJ1ZSwidXBkYXRlIjp0cnVlLCJkZWxldGUiOnRydWV9LHsiaXRlbSI6InVzZXIiLCJ2aWV3Ijp0cnVlLCJpbnNlcnQiOnRydWUsInVwZGF0ZSI6dHJ1ZSwiZGVsZXRlIjp0cnVlfV19.83cPfghBbLs-ZElHhTFfRdLq8GcIP1eCV88E1VVYFT0"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"bulletin p1q6\",\n    \"enabled\": true,\n    \"type\": \"bulletin\",\n    \"address\": {\n        \"lat\": 1,\n        \"lng\": 1\n    },\n    \"connection_status\": {\n        \"type\": \"3g\"\n    }\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/api/v1/devices",
+					
+					"host": [
+						"{{base_url}}"
+					],
+					
+					"path": [
+						"api",
+						"v1",
+						"devices"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Create Device",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im5naGlhbHRAdm5nLmNvbS52biIsImxhc3RfbG9naW5fYXQiOiIyMDIzLTEwLTIyVDEwOjM1OjQ2LjUzODIyNSswNzowMCIsInBlcm1pc3Npb25zIjpbeyJpdGVtIjoiYXJ0aWNsZSIsInZpZXciOnRydWUsImluc2VydCI6dHJ1ZSwidXBkYXRlIjp0cnVlLCJkZWxldGUiOnRydWV9LHsiaXRlbSI6ImRldmljZSIsInZpZXciOnRydWUsImluc2VydCI6dHJ1ZSwidXBkYXRlIjp0cnVlLCJkZWxldGUiOnRydWV9LHsiaXRlbSI6InJvbGUiLCJ2aWV3Ijp0cnVlLCJpbnNlcnQiOnRydWUsInVwZGF0ZSI6dHJ1ZSwiZGVsZXRlIjp0cnVlfSx7Iml0ZW0iOiJzY2hlZHVsZSIsInZpZXciOnRydWUsImluc2VydCI6dHJ1ZSwidXBkYXRlIjp0cnVlLCJkZWxldGUiOnRydWV9LHsiaXRlbSI6InVzZXIiLCJ2aWV3Ijp0cnVlLCJpbnNlcnQiOnRydWUsInVwZGF0ZSI6dHJ1ZSwiZGVsZXRlIjp0cnVlfV19.83cPfghBbLs-ZElHhTFfRdLq8GcIP1eCV88E1VVYFT0"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"bulletin p1q6\",\n    \"enabled\": true,\n    \"type\": \"bulletin\",\n    \"address\": {\n        \"lat\": 1,\n        \"lng\": 1\n    },\n    \"connection_status\": {\n        \"type\": \"3g\"\n    }\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v1/devices",
+							
+							"host": [
+								"{{base_url}}"
+							],
+							
+							"path": [
+								"api",
+								"v1",
+								"devices"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 22 Oct 2023 03:41:34 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "252"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"code\": 1,\n    \"data\": {\n        \"id\": 2,\n        \"created_at\": \"2023-10-22T10:41:34.423+07:00\",\n        \"updated_at\": \"2023-10-22T10:41:34.423+07:00\",\n        \"deleted_at\": null,\n        \"name\": \"bulletin p1q6\",\n        \"type\": \"bulletin\",\n        \"enabled\": true,\n        \"address\": {\n            \"lat\": 1,\n            \"lng\": 1\n        },\n        \"connection_status\": {\n            \"type\": \"3g\"\n        }\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Update Device",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im5naGlhbHRAdm5nLmNvbS52biIsImxhc3RfbG9naW5fYXQiOiIyMDIzLTEwLTIyVDEwOjM1OjQ2LjUzODIyNSswNzowMCIsInBlcm1pc3Npb25zIjpbeyJpdGVtIjoiYXJ0aWNsZSIsInZpZXciOnRydWUsImluc2VydCI6dHJ1ZSwidXBkYXRlIjp0cnVlLCJkZWxldGUiOnRydWV9LHsiaXRlbSI6ImRldmljZSIsInZpZXciOnRydWUsImluc2VydCI6dHJ1ZSwidXBkYXRlIjp0cnVlLCJkZWxldGUiOnRydWV9LHsiaXRlbSI6InJvbGUiLCJ2aWV3Ijp0cnVlLCJpbnNlcnQiOnRydWUsInVwZGF0ZSI6dHJ1ZSwiZGVsZXRlIjp0cnVlfSx7Iml0ZW0iOiJzY2hlZHVsZSIsInZpZXciOnRydWUsImluc2VydCI6dHJ1ZSwidXBkYXRlIjp0cnVlLCJkZWxldGUiOnRydWV9LHsiaXRlbSI6InVzZXIiLCJ2aWV3Ijp0cnVlLCJpbnNlcnQiOnRydWUsInVwZGF0ZSI6dHJ1ZSwiZGVsZXRlIjp0cnVlfV19.83cPfghBbLs-ZElHhTFfRdLq8GcIP1eCV88E1VVYFT0"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 1,\n    \"name\": \"bulletin p2q6\",\n    \"enabled\": false,\n    \"type\": \"bulletin\",\n    \"address\": {\n        \"lat\": 2,\n        \"lng\": 1\n    },\n    \"connection_status\": {\n        \"type\": \"3g\"\n    }\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/api/v1/devices/1",
+					
+					"host": [
+						"{{base_url}}"
+					],
+					
+					"path": [
+						"api",
+						"v1",
+						"devices",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Update Device",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im5naGlhbHRAdm5nLmNvbS52biIsImxhc3RfbG9naW5fYXQiOiIyMDIzLTEwLTIyVDEwOjM1OjQ2LjUzODIyNSswNzowMCIsInBlcm1pc3Npb25zIjpbeyJpdGVtIjoiYXJ0aWNsZSIsInZpZXciOnRydWUsImluc2VydCI6dHJ1ZSwidXBkYXRlIjp0cnVlLCJkZWxldGUiOnRydWV9LHsiaXRlbSI6ImRldmljZSIsInZpZXciOnRydWUsImluc2VydCI6dHJ1ZSwidXBkYXRlIjp0cnVlLCJkZWxldGUiOnRydWV9LHsiaXRlbSI6InJvbGUiLCJ2aWV3Ijp0cnVlLCJpbnNlcnQiOnRydWUsInVwZGF0ZSI6dHJ1ZSwiZGVsZXRlIjp0cnVlfSx7Iml0ZW0iOiJzY2hlZHVsZSIsInZpZXciOnRydWUsImluc2VydCI6dHJ1ZSwidXBkYXRlIjp0cnVlLCJkZWxldGUiOnRydWV9LHsiaXRlbSI6InVzZXIiLCJ2aWV3Ijp0cnVlLCJpbnNlcnQiOnRydWUsInVwZGF0ZSI6dHJ1ZSwiZGVsZXRlIjp0cnVlfV19.83cPfghBbLs-ZElHhTFfRdLq8GcIP1eCV88E1VVYFT0"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 1,\n    \"name\": \"bulletin p2q6\",\n    \"enabled\": false,\n    \"type\": \"bulletin\",\n    \"address\": {\n        \"lat\": 2,\n        \"lng\": 1\n    },\n    \"connection_status\": {\n        \"type\": \"3g\"\n    }\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v1/devices/1",
+							
+							"host": [
+								"{{base_url}}"
+							],
+							
+							"path": [
+								"api",
+								"v1",
+								"devices",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 22 Oct 2023 03:46:17 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "244"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"code\": 1,\n    \"data\": {\n        \"id\": 1,\n        \"created_at\": \"0001-01-01T00:00:00Z\",\n        \"updated_at\": \"2023-10-22T10:46:17.184+07:00\",\n        \"deleted_at\": null,\n        \"name\": \"bulletin p2q6\",\n        \"type\": \"bulletin\",\n        \"enabled\": false,\n        \"address\": {\n            \"lat\": 2,\n            \"lng\": 1\n        },\n        \"connection_status\": {\n            \"type\": \"3g\"\n        }\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "List Devices",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im5naGlhbHRAdm5nLmNvbS52biIsImxhc3RfbG9naW5fYXQiOiIyMDIzLTEwLTIyVDEwOjM1OjQ2LjUzODIyNSswNzowMCIsInBlcm1pc3Npb25zIjpbeyJpdGVtIjoiYXJ0aWNsZSIsInZpZXciOnRydWUsImluc2VydCI6dHJ1ZSwidXBkYXRlIjp0cnVlLCJkZWxldGUiOnRydWV9LHsiaXRlbSI6ImRldmljZSIsInZpZXciOnRydWUsImluc2VydCI6dHJ1ZSwidXBkYXRlIjp0cnVlLCJkZWxldGUiOnRydWV9LHsiaXRlbSI6InJvbGUiLCJ2aWV3Ijp0cnVlLCJpbnNlcnQiOnRydWUsInVwZGF0ZSI6dHJ1ZSwiZGVsZXRlIjp0cnVlfSx7Iml0ZW0iOiJzY2hlZHVsZSIsInZpZXciOnRydWUsImluc2VydCI6dHJ1ZSwidXBkYXRlIjp0cnVlLCJkZWxldGUiOnRydWV9LHsiaXRlbSI6InVzZXIiLCJ2aWV3Ijp0cnVlLCJpbnNlcnQiOnRydWUsInVwZGF0ZSI6dHJ1ZSwiZGVsZXRlIjp0cnVlfV19.83cPfghBbLs-ZElHhTFfRdLq8GcIP1eCV88E1VVYFT0"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"bulletin p1q6\",\n    \"enabled\": true,\n    \"type\": \"bulletin\",\n    \"address\": {\n        \"lat\": 1,\n        \"lng\": 1\n    },\n    \"connection_status\": {\n        \"type\": \"3g\"\n    }\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/api/v1/devices",
+					
+					"host": [
+						"{{base_url}}"
+					],
+					
+					"path": [
+						"api",
+						"v1",
+						"devices"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Devices",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im5naGlhbHRAdm5nLmNvbS52biIsImxhc3RfbG9naW5fYXQiOiIyMDIzLTEwLTIyVDEwOjM1OjQ2LjUzODIyNSswNzowMCIsInBlcm1pc3Npb25zIjpbeyJpdGVtIjoiYXJ0aWNsZSIsInZpZXciOnRydWUsImluc2VydCI6dHJ1ZSwidXBkYXRlIjp0cnVlLCJkZWxldGUiOnRydWV9LHsiaXRlbSI6ImRldmljZSIsInZpZXciOnRydWUsImluc2VydCI6dHJ1ZSwidXBkYXRlIjp0cnVlLCJkZWxldGUiOnRydWV9LHsiaXRlbSI6InJvbGUiLCJ2aWV3Ijp0cnVlLCJpbnNlcnQiOnRydWUsInVwZGF0ZSI6dHJ1ZSwiZGVsZXRlIjp0cnVlfSx7Iml0ZW0iOiJzY2hlZHVsZSIsInZpZXciOnRydWUsImluc2VydCI6dHJ1ZSwidXBkYXRlIjp0cnVlLCJkZWxldGUiOnRydWV9LHsiaXRlbSI6InVzZXIiLCJ2aWV3Ijp0cnVlLCJpbnNlcnQiOnRydWUsInVwZGF0ZSI6dHJ1ZSwiZGVsZXRlIjp0cnVlfV19.83cPfghBbLs-ZElHhTFfRdLq8GcIP1eCV88E1VVYFT0"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/v1/devices",
+							
+							"host": [
+								"{{base_url}}"
+							],
+							
+							"path": [
+								"api",
+								"v1",
+								"devices"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 22 Oct 2023 03:42:06 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "541"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"code\": 1,\n    \"data\": {\n        \"pagination\": {\n            \"page\": 1,\n            \"size\": 100,\n            \"total_pages\": 1\n        },\n        \"items\": [\n            {\n                \"id\": 1,\n                \"created_at\": \"2023-10-22T10:41:19.066+07:00\",\n                \"updated_at\": \"2023-10-22T10:41:19.066+07:00\",\n                \"deleted_at\": null,\n                \"name\": \"bulletin p1q6\",\n                \"type\": \"bulletin\",\n                \"enabled\": true,\n                \"address\": {\n                    \"lat\": 1,\n                    \"lng\": 1\n                },\n                \"connection_status\": null\n            },\n            {\n                \"id\": 2,\n                \"created_at\": \"2023-10-22T10:41:34.423+07:00\",\n                \"updated_at\": \"2023-10-22T10:41:34.423+07:00\",\n                \"deleted_at\": null,\n                \"name\": \"bulletin p1q6\",\n                \"type\": \"bulletin\",\n                \"enabled\": true,\n                \"address\": {\n                    \"lat\": 1,\n                    \"lng\": 1\n                },\n                \"connection_status\": {\n                    \"type\": \"3g\"\n                }\n            }\n        ]\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Device Types",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im5naGlhbHRAdm5nLmNvbS52biIsImxhc3RfbG9naW5fYXQiOiIyMDIzLTEwLTIyVDEwOjM1OjQ2LjUzODIyNSswNzowMCIsInBlcm1pc3Npb25zIjpbeyJpdGVtIjoiYXJ0aWNsZSIsInZpZXciOnRydWUsImluc2VydCI6dHJ1ZSwidXBkYXRlIjp0cnVlLCJkZWxldGUiOnRydWV9LHsiaXRlbSI6ImRldmljZSIsInZpZXciOnRydWUsImluc2VydCI6dHJ1ZSwidXBkYXRlIjp0cnVlLCJkZWxldGUiOnRydWV9LHsiaXRlbSI6InJvbGUiLCJ2aWV3Ijp0cnVlLCJpbnNlcnQiOnRydWUsInVwZGF0ZSI6dHJ1ZSwiZGVsZXRlIjp0cnVlfSx7Iml0ZW0iOiJzY2hlZHVsZSIsInZpZXciOnRydWUsImluc2VydCI6dHJ1ZSwidXBkYXRlIjp0cnVlLCJkZWxldGUiOnRydWV9LHsiaXRlbSI6InVzZXIiLCJ2aWV3Ijp0cnVlLCJpbnNlcnQiOnRydWUsInVwZGF0ZSI6dHJ1ZSwiZGVsZXRlIjp0cnVlfV19.83cPfghBbLs-ZElHhTFfRdLq8GcIP1eCV88E1VVYFT0"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"dev\",\n    \"enabled\": true\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/api/v1/devices/types",
+					
+					"host": [
+						"{{base_url}}"
+					],
+					
+					"path": [
+						"api",
+						"v1",
+						"devices",
+						"types"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Device Types",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im5naGlhbHRAdm5nLmNvbS52biIsImxhc3RfbG9naW5fYXQiOiIyMDIzLTEwLTIyVDEwOjM1OjQ2LjUzODIyNSswNzowMCIsInBlcm1pc3Npb25zIjpbeyJpdGVtIjoiYXJ0aWNsZSIsInZpZXciOnRydWUsImluc2VydCI6dHJ1ZSwidXBkYXRlIjp0cnVlLCJkZWxldGUiOnRydWV9LHsiaXRlbSI6ImRldmljZSIsInZpZXciOnRydWUsImluc2VydCI6dHJ1ZSwidXBkYXRlIjp0cnVlLCJkZWxldGUiOnRydWV9LHsiaXRlbSI6InJvbGUiLCJ2aWV3Ijp0cnVlLCJpbnNlcnQiOnRydWUsInVwZGF0ZSI6dHJ1ZSwiZGVsZXRlIjp0cnVlfSx7Iml0ZW0iOiJzY2hlZHVsZSIsInZpZXciOnRydWUsImluc2VydCI6dHJ1ZSwidXBkYXRlIjp0cnVlLCJkZWxldGUiOnRydWV9LHsiaXRlbSI6InVzZXIiLCJ2aWV3Ijp0cnVlLCJpbnNlcnQiOnRydWUsInVwZGF0ZSI6dHJ1ZSwiZGVsZXRlIjp0cnVlfV19.83cPfghBbLs-ZElHhTFfRdLq8GcIP1eCV88E1VVYFT0"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/v1/devices/types",
+							
+							"host": [
+								"{{base_url}}"
+							],
+							
+							"path": [
+								"api",
+								"v1",
+								"devices",
+								"types"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 22 Oct 2023 03:40:13 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "99"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"code\": 1,\n    \"data\": {\n        \"pagination\": {\n            \"page\": 0,\n            \"size\": 0,\n            \"total_pages\": 0\n        },\n        \"items\": [\n            \"speaker\",\n            \"bulletin\"\n        ]\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Create Group Devices",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im5naGlhbHRAdm5nLmNvbS52biIsImxhc3RfbG9naW5fYXQiOiIyMDIzLTEwLTIyVDEwOjM1OjQ2LjUzODIyNSswNzowMCIsInBlcm1pc3Npb25zIjpbeyJpdGVtIjoiYXJ0aWNsZSIsInZpZXciOnRydWUsImluc2VydCI6dHJ1ZSwidXBkYXRlIjp0cnVlLCJkZWxldGUiOnRydWV9LHsiaXRlbSI6ImRldmljZSIsInZpZXciOnRydWUsImluc2VydCI6dHJ1ZSwidXBkYXRlIjp0cnVlLCJkZWxldGUiOnRydWV9LHsiaXRlbSI6InJvbGUiLCJ2aWV3Ijp0cnVlLCJpbnNlcnQiOnRydWUsInVwZGF0ZSI6dHJ1ZSwiZGVsZXRlIjp0cnVlfSx7Iml0ZW0iOiJzY2hlZHVsZSIsInZpZXciOnRydWUsImluc2VydCI6dHJ1ZSwidXBkYXRlIjp0cnVlLCJkZWxldGUiOnRydWV9LHsiaXRlbSI6InVzZXIiLCJ2aWV3Ijp0cnVlLCJpbnNlcnQiOnRydWUsInVwZGF0ZSI6dHJ1ZSwiZGVsZXRlIjp0cnVlfV19.83cPfghBbLs-ZElHhTFfRdLq8GcIP1eCV88E1VVYFT0"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"p1q6\",\n    \"enabled\": true,\n    \"description\": \"description\"\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/api/v1/groupdevices",
+					
+					"host": [
+						"{{base_url}}"
+					],
+					
+					"path": [
+						"api",
+						"v1",
+						"groupdevices"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Create Group Devices",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im5naGlhbHRAdm5nLmNvbS52biIsImxhc3RfbG9naW5fYXQiOiIyMDIzLTEwLTIyVDEwOjM1OjQ2LjUzODIyNSswNzowMCIsInBlcm1pc3Npb25zIjpbeyJpdGVtIjoiYXJ0aWNsZSIsInZpZXciOnRydWUsImluc2VydCI6dHJ1ZSwidXBkYXRlIjp0cnVlLCJkZWxldGUiOnRydWV9LHsiaXRlbSI6ImRldmljZSIsInZpZXciOnRydWUsImluc2VydCI6dHJ1ZSwidXBkYXRlIjp0cnVlLCJkZWxldGUiOnRydWV9LHsiaXRlbSI6InJvbGUiLCJ2aWV3Ijp0cnVlLCJpbnNlcnQiOnRydWUsInVwZGF0ZSI6dHJ1ZSwiZGVsZXRlIjp0cnVlfSx7Iml0ZW0iOiJzY2hlZHVsZSIsInZpZXciOnRydWUsImluc2VydCI6dHJ1ZSwidXBkYXRlIjp0cnVlLCJkZWxldGUiOnRydWV9LHsiaXRlbSI6InVzZXIiLCJ2aWV3Ijp0cnVlLCJpbnNlcnQiOnRydWUsInVwZGF0ZSI6dHJ1ZSwiZGVsZXRlIjp0cnVlfV19.83cPfghBbLs-ZElHhTFfRdLq8GcIP1eCV88E1VVYFT0"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"p1q6\",\n    \"enabled\": true,\n    \"description\": \"description\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v1/groupdevices",
+							
+							"host": [
+								"{{base_url}}"
+							],
+							
+							"path": [
+								"api",
+								"v1",
+								"groupdevices"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 22 Oct 2023 04:10:39 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "191"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"code\": 1,\n    \"data\": {\n        \"id\": 1,\n        \"created_at\": \"2023-10-22T11:10:39.115+07:00\",\n        \"updated_at\": \"2023-10-22T11:10:39.115+07:00\",\n        \"deleted_at\": null,\n        \"name\": \"p1q6\",\n        \"enabled\": true,\n        \"description\": \"description\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Group Devices",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im5naGlhbHRAdm5nLmNvbS52biIsImxhc3RfbG9naW5fYXQiOiIyMDIzLTEwLTIyVDEwOjM1OjQ2LjUzODIyNSswNzowMCIsInBlcm1pc3Npb25zIjpbeyJpdGVtIjoiYXJ0aWNsZSIsInZpZXciOnRydWUsImluc2VydCI6dHJ1ZSwidXBkYXRlIjp0cnVlLCJkZWxldGUiOnRydWV9LHsiaXRlbSI6ImRldmljZSIsInZpZXciOnRydWUsImluc2VydCI6dHJ1ZSwidXBkYXRlIjp0cnVlLCJkZWxldGUiOnRydWV9LHsiaXRlbSI6InJvbGUiLCJ2aWV3Ijp0cnVlLCJpbnNlcnQiOnRydWUsInVwZGF0ZSI6dHJ1ZSwiZGVsZXRlIjp0cnVlfSx7Iml0ZW0iOiJzY2hlZHVsZSIsInZpZXciOnRydWUsImluc2VydCI6dHJ1ZSwidXBkYXRlIjp0cnVlLCJkZWxldGUiOnRydWV9LHsiaXRlbSI6InVzZXIiLCJ2aWV3Ijp0cnVlLCJpbnNlcnQiOnRydWUsInVwZGF0ZSI6dHJ1ZSwiZGVsZXRlIjp0cnVlfV19.83cPfghBbLs-ZElHhTFfRdLq8GcIP1eCV88E1VVYFT0"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/api/v1/groupdevices/1",
+					
+					"host": [
+						"{{base_url}}"
+					],
+					
+					"path": [
+						"api",
+						"v1",
+						"groupdevices",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Group Device",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im5naGlhbHRAdm5nLmNvbS52biIsImxhc3RfbG9naW5fYXQiOiIyMDIzLTEwLTIyVDEwOjM1OjQ2LjUzODIyNSswNzowMCIsInBlcm1pc3Npb25zIjpbeyJpdGVtIjoiYXJ0aWNsZSIsInZpZXciOnRydWUsImluc2VydCI6dHJ1ZSwidXBkYXRlIjp0cnVlLCJkZWxldGUiOnRydWV9LHsiaXRlbSI6ImRldmljZSIsInZpZXciOnRydWUsImluc2VydCI6dHJ1ZSwidXBkYXRlIjp0cnVlLCJkZWxldGUiOnRydWV9LHsiaXRlbSI6InJvbGUiLCJ2aWV3Ijp0cnVlLCJpbnNlcnQiOnRydWUsInVwZGF0ZSI6dHJ1ZSwiZGVsZXRlIjp0cnVlfSx7Iml0ZW0iOiJzY2hlZHVsZSIsInZpZXciOnRydWUsImluc2VydCI6dHJ1ZSwidXBkYXRlIjp0cnVlLCJkZWxldGUiOnRydWV9LHsiaXRlbSI6InVzZXIiLCJ2aWV3Ijp0cnVlLCJpbnNlcnQiOnRydWUsInVwZGF0ZSI6dHJ1ZSwiZGVsZXRlIjp0cnVlfV19.83cPfghBbLs-ZElHhTFfRdLq8GcIP1eCV88E1VVYFT0"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/v1/groupdevices/1",
+							
+							"host": [
+								"{{base_url}}"
+							],
+							
+							"path": [
+								"api",
+								"v1",
+								"groupdevices",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 22 Oct 2023 04:10:59 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "204"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"code\": 1,\n    \"data\": {\n        \"id\": 1,\n        \"created_at\": \"2023-10-22T11:10:39.115+07:00\",\n        \"updated_at\": \"2023-10-22T11:10:39.115+07:00\",\n        \"deleted_at\": null,\n        \"name\": \"p1q6\",\n        \"enabled\": true,\n        \"description\": \"description\",\n        \"devices\": []\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "List Group Devices",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im5naGlhbHRAdm5nLmNvbS52biIsImxhc3RfbG9naW5fYXQiOiIyMDIzLTEwLTIyVDEwOjM1OjQ2LjUzODIyNSswNzowMCIsInBlcm1pc3Npb25zIjpbeyJpdGVtIjoiYXJ0aWNsZSIsInZpZXciOnRydWUsImluc2VydCI6dHJ1ZSwidXBkYXRlIjp0cnVlLCJkZWxldGUiOnRydWV9LHsiaXRlbSI6ImRldmljZSIsInZpZXciOnRydWUsImluc2VydCI6dHJ1ZSwidXBkYXRlIjp0cnVlLCJkZWxldGUiOnRydWV9LHsiaXRlbSI6InJvbGUiLCJ2aWV3Ijp0cnVlLCJpbnNlcnQiOnRydWUsInVwZGF0ZSI6dHJ1ZSwiZGVsZXRlIjp0cnVlfSx7Iml0ZW0iOiJzY2hlZHVsZSIsInZpZXciOnRydWUsImluc2VydCI6dHJ1ZSwidXBkYXRlIjp0cnVlLCJkZWxldGUiOnRydWV9LHsiaXRlbSI6InVzZXIiLCJ2aWV3Ijp0cnVlLCJpbnNlcnQiOnRydWUsInVwZGF0ZSI6dHJ1ZSwiZGVsZXRlIjp0cnVlfV19.83cPfghBbLs-ZElHhTFfRdLq8GcIP1eCV88E1VVYFT0"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/api/v1/groupdevices",
+					
+					"host": [
+						"{{base_url}}"
+					],
+					
+					"path": [
+						"api",
+						"v1",
+						"groupdevices"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Group Devices",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im5naGlhbHRAdm5nLmNvbS52biIsImxhc3RfbG9naW5fYXQiOiIyMDIzLTEwLTIyVDEwOjM1OjQ2LjUzODIyNSswNzowMCIsInBlcm1pc3Npb25zIjpbeyJpdGVtIjoiYXJ0aWNsZSIsInZpZXciOnRydWUsImluc2VydCI6dHJ1ZSwidXBkYXRlIjp0cnVlLCJkZWxldGUiOnRydWV9LHsiaXRlbSI6ImRldmljZSIsInZpZXciOnRydWUsImluc2VydCI6dHJ1ZSwidXBkYXRlIjp0cnVlLCJkZWxldGUiOnRydWV9LHsiaXRlbSI6InJvbGUiLCJ2aWV3Ijp0cnVlLCJpbnNlcnQiOnRydWUsInVwZGF0ZSI6dHJ1ZSwiZGVsZXRlIjp0cnVlfSx7Iml0ZW0iOiJzY2hlZHVsZSIsInZpZXciOnRydWUsImluc2VydCI6dHJ1ZSwidXBkYXRlIjp0cnVlLCJkZWxldGUiOnRydWV9LHsiaXRlbSI6InVzZXIiLCJ2aWV3Ijp0cnVlLCJpbnNlcnQiOnRydWUsInVwZGF0ZSI6dHJ1ZSwiZGVsZXRlIjp0cnVlfV19.83cPfghBbLs-ZElHhTFfRdLq8GcIP1eCV88E1VVYFT0"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/v1/groupdevices",
+							
+							"host": [
+								"{{base_url}}"
+							],
+							
+							"path": [
+								"api",
+								"v1",
+								"groupdevices"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 22 Oct 2023 04:11:54 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "254"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"code\": 1,\n    \"data\": {\n        \"pagination\": {\n            \"page\": 1,\n            \"size\": 100,\n            \"total_pages\": 1\n        },\n        \"items\": [\n            {\n                \"id\": 1,\n                \"created_at\": \"2023-10-22T11:10:39.115+07:00\",\n                \"updated_at\": \"2023-10-22T11:10:39.115+07:00\",\n                \"deleted_at\": null,\n                \"name\": \"p1q6\",\n                \"enabled\": true,\n                \"description\": \"description\"\n            }\n        ]\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Update Group Devices",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im5naGlhbHRAdm5nLmNvbS52biIsImxhc3RfbG9naW5fYXQiOiIyMDIzLTEwLTIyVDEwOjM1OjQ2LjUzODIyNSswNzowMCIsInBlcm1pc3Npb25zIjpbeyJpdGVtIjoiYXJ0aWNsZSIsInZpZXciOnRydWUsImluc2VydCI6dHJ1ZSwidXBkYXRlIjp0cnVlLCJkZWxldGUiOnRydWV9LHsiaXRlbSI6ImRldmljZSIsInZpZXciOnRydWUsImluc2VydCI6dHJ1ZSwidXBkYXRlIjp0cnVlLCJkZWxldGUiOnRydWV9LHsiaXRlbSI6InJvbGUiLCJ2aWV3Ijp0cnVlLCJpbnNlcnQiOnRydWUsInVwZGF0ZSI6dHJ1ZSwiZGVsZXRlIjp0cnVlfSx7Iml0ZW0iOiJzY2hlZHVsZSIsInZpZXciOnRydWUsImluc2VydCI6dHJ1ZSwidXBkYXRlIjp0cnVlLCJkZWxldGUiOnRydWV9LHsiaXRlbSI6InVzZXIiLCJ2aWV3Ijp0cnVlLCJpbnNlcnQiOnRydWUsInVwZGF0ZSI6dHJ1ZSwiZGVsZXRlIjp0cnVlfV19.83cPfghBbLs-ZElHhTFfRdLq8GcIP1eCV88E1VVYFT0"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 1,\n    \"name\": \"p1q6\",\n    \"enabled\": false,\n    \"description\": \"description\",\n    \"group_device\": {\n        \"group_id\": 1,\n        \"device_id\": 1,\n        \"enabled\": true\n    }\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/api/v1/groupdevices/1",
+					
+					"host": [
+						"{{base_url}}"
+					],
+					
+					"path": [
+						"api",
+						"v1",
+						"groupdevices",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Update Group Devices",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im5naGlhbHRAdm5nLmNvbS52biIsImxhc3RfbG9naW5fYXQiOiIyMDIzLTEwLTIyVDEwOjM1OjQ2LjUzODIyNSswNzowMCIsInBlcm1pc3Npb25zIjpbeyJpdGVtIjoiYXJ0aWNsZSIsInZpZXciOnRydWUsImluc2VydCI6dHJ1ZSwidXBkYXRlIjp0cnVlLCJkZWxldGUiOnRydWV9LHsiaXRlbSI6ImRldmljZSIsInZpZXciOnRydWUsImluc2VydCI6dHJ1ZSwidXBkYXRlIjp0cnVlLCJkZWxldGUiOnRydWV9LHsiaXRlbSI6InJvbGUiLCJ2aWV3Ijp0cnVlLCJpbnNlcnQiOnRydWUsInVwZGF0ZSI6dHJ1ZSwiZGVsZXRlIjp0cnVlfSx7Iml0ZW0iOiJzY2hlZHVsZSIsInZpZXciOnRydWUsImluc2VydCI6dHJ1ZSwidXBkYXRlIjp0cnVlLCJkZWxldGUiOnRydWV9LHsiaXRlbSI6InVzZXIiLCJ2aWV3Ijp0cnVlLCJpbnNlcnQiOnRydWUsInVwZGF0ZSI6dHJ1ZSwiZGVsZXRlIjp0cnVlfV19.83cPfghBbLs-ZElHhTFfRdLq8GcIP1eCV88E1VVYFT0"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 1,\n    \"name\": \"p1q6\",\n    \"enabled\": false,\n    \"description\": \"description\",\n    \"group_device\": {\n        \"group_id\": 1,\n        \"device_id\": 1,\n        \"enabled\": true\n    }\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v1/groupdevices/1",
+							
+							"host": [
+								"{{base_url}}"
+							],
+							
+							"path": [
+								"api",
+								"v1",
+								"groupdevices",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 22 Oct 2023 04:13:59 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "166"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"code\": 1,\n    \"data\": {\n        \"id\": 1,\n        \"created_at\": \"0001-01-01T00:00:00Z\",\n        \"updated_at\": \"2023-10-22T11:13:59.71+07:00\",\n        \"deleted_at\": null,\n        \"name\": \"p1q6\",\n        \"description\": \"description\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete Group Devices",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im5naGlhbHRAdm5nLmNvbS52biIsImxhc3RfbG9naW5fYXQiOiIyMDIzLTEwLTIyVDEwOjM1OjQ2LjUzODIyNSswNzowMCIsInBlcm1pc3Npb25zIjpbeyJpdGVtIjoiYXJ0aWNsZSIsInZpZXciOnRydWUsImluc2VydCI6dHJ1ZSwidXBkYXRlIjp0cnVlLCJkZWxldGUiOnRydWV9LHsiaXRlbSI6ImRldmljZSIsInZpZXciOnRydWUsImluc2VydCI6dHJ1ZSwidXBkYXRlIjp0cnVlLCJkZWxldGUiOnRydWV9LHsiaXRlbSI6InJvbGUiLCJ2aWV3Ijp0cnVlLCJpbnNlcnQiOnRydWUsInVwZGF0ZSI6dHJ1ZSwiZGVsZXRlIjp0cnVlfSx7Iml0ZW0iOiJzY2hlZHVsZSIsInZpZXciOnRydWUsImluc2VydCI6dHJ1ZSwidXBkYXRlIjp0cnVlLCJkZWxldGUiOnRydWV9LHsiaXRlbSI6InVzZXIiLCJ2aWV3Ijp0cnVlLCJpbnNlcnQiOnRydWUsInVwZGF0ZSI6dHJ1ZSwiZGVsZXRlIjp0cnVlfV19.83cPfghBbLs-ZElHhTFfRdLq8GcIP1eCV88E1VVYFT0"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/api/v1/groupdevices/1/devices/1",
+					
+					"host": [
+						"{{base_url}}"
+					],
+					
+					"path": [
+						"api",
+						"v1",
+						"groupdevices",
+						"1",
+						"devices",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Delete Group Devices",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im5naGlhbHRAdm5nLmNvbS52biIsImxhc3RfbG9naW5fYXQiOiIyMDIzLTEwLTIyVDEwOjM1OjQ2LjUzODIyNSswNzowMCIsInBlcm1pc3Npb25zIjpbeyJpdGVtIjoiYXJ0aWNsZSIsInZpZXciOnRydWUsImluc2VydCI6dHJ1ZSwidXBkYXRlIjp0cnVlLCJkZWxldGUiOnRydWV9LHsiaXRlbSI6ImRldmljZSIsInZpZXciOnRydWUsImluc2VydCI6dHJ1ZSwidXBkYXRlIjp0cnVlLCJkZWxldGUiOnRydWV9LHsiaXRlbSI6InJvbGUiLCJ2aWV3Ijp0cnVlLCJpbnNlcnQiOnRydWUsInVwZGF0ZSI6dHJ1ZSwiZGVsZXRlIjp0cnVlfSx7Iml0ZW0iOiJzY2hlZHVsZSIsInZpZXciOnRydWUsImluc2VydCI6dHJ1ZSwidXBkYXRlIjp0cnVlLCJkZWxldGUiOnRydWV9LHsiaXRlbSI6InVzZXIiLCJ2aWV3Ijp0cnVlLCJpbnNlcnQiOnRydWUsInVwZGF0ZSI6dHJ1ZSwiZGVsZXRlIjp0cnVlfV19.83cPfghBbLs-ZElHhTFfRdLq8GcIP1eCV88E1VVYFT0"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/v1/groupdevices/1/devices/1",
+							
+							"host": [
+								"{{base_url}}"
+							],
+							
+							"path": [
+								"api",
+								"v1",
+								"groupdevices",
+								"1",
+								"devices",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 22 Oct 2023 04:15:21 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "22"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"code\": 1,\n    \"data\": null\n}"
+				}
+			]
+		},
+		{
+			"name": "Create Schedule",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im5naGlhbHRAdm5nLmNvbS52biIsImxhc3RfbG9naW5fYXQiOiIyMDIzLTEwLTIyVDEwOjM1OjQ2LjUzODIyNSswNzowMCIsInBlcm1pc3Npb25zIjpbeyJpdGVtIjoiYXJ0aWNsZSIsInZpZXciOnRydWUsImluc2VydCI6dHJ1ZSwidXBkYXRlIjp0cnVlLCJkZWxldGUiOnRydWV9LHsiaXRlbSI6ImRldmljZSIsInZpZXciOnRydWUsImluc2VydCI6dHJ1ZSwidXBkYXRlIjp0cnVlLCJkZWxldGUiOnRydWV9LHsiaXRlbSI6InJvbGUiLCJ2aWV3Ijp0cnVlLCJpbnNlcnQiOnRydWUsInVwZGF0ZSI6dHJ1ZSwiZGVsZXRlIjp0cnVlfSx7Iml0ZW0iOiJzY2hlZHVsZSIsInZpZXciOnRydWUsImluc2VydCI6dHJ1ZSwidXBkYXRlIjp0cnVlLCJkZWxldGUiOnRydWV9LHsiaXRlbSI6InVzZXIiLCJ2aWV3Ijp0cnVlLCJpbnNlcnQiOnRydWUsInVwZGF0ZSI6dHJ1ZSwiZGVsZXRlIjp0cnVlfV19.83cPfghBbLs-ZElHhTFfRdLq8GcIP1eCV88E1VVYFT0"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"chương trình giáng sinh\",\n    \"enabled\": true,\n    \"description\": \"description\"\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/api/v1/schedules",
+					
+					"host": [
+						"{{base_url}}"
+					],
+					
+					"path": [
+						"api",
+						"v1",
+						"schedules"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Create Schedule",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im5naGlhbHRAdm5nLmNvbS52biIsImxhc3RfbG9naW5fYXQiOiIyMDIzLTEwLTIyVDEwOjM1OjQ2LjUzODIyNSswNzowMCIsInBlcm1pc3Npb25zIjpbeyJpdGVtIjoiYXJ0aWNsZSIsInZpZXciOnRydWUsImluc2VydCI6dHJ1ZSwidXBkYXRlIjp0cnVlLCJkZWxldGUiOnRydWV9LHsiaXRlbSI6ImRldmljZSIsInZpZXciOnRydWUsImluc2VydCI6dHJ1ZSwidXBkYXRlIjp0cnVlLCJkZWxldGUiOnRydWV9LHsiaXRlbSI6InJvbGUiLCJ2aWV3Ijp0cnVlLCJpbnNlcnQiOnRydWUsInVwZGF0ZSI6dHJ1ZSwiZGVsZXRlIjp0cnVlfSx7Iml0ZW0iOiJzY2hlZHVsZSIsInZpZXciOnRydWUsImluc2VydCI6dHJ1ZSwidXBkYXRlIjp0cnVlLCJkZWxldGUiOnRydWV9LHsiaXRlbSI6InVzZXIiLCJ2aWV3Ijp0cnVlLCJpbnNlcnQiOnRydWUsInVwZGF0ZSI6dHJ1ZSwiZGVsZXRlIjp0cnVlfV19.83cPfghBbLs-ZElHhTFfRdLq8GcIP1eCV88E1VVYFT0"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"chương trình giáng sinh\",\n    \"enabled\": true,\n    \"description\": \"description\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v1/schedules",
+							
+							"host": [
+								"{{base_url}}"
+							],
+							
+							"path": [
+								"api",
+								"v1",
+								"schedules"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 24 Oct 2023 14:55:12 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "229"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"code\": 1,\n    \"data\": {\n        \"id\": 1,\n        \"created_at\": \"2023-10-24T21:55:12.904+07:00\",\n        \"updated_at\": \"2023-10-24T21:55:12.904+07:00\",\n        \"deleted_at\": null,\n        \"name\": \"chương trình giáng sinh\",\n        \"creator_id\": 1,\n        \"enabled\": true,\n        \"description\": \"description\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "List Schedules",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im5naGlhbHRAdm5nLmNvbS52biIsImxhc3RfbG9naW5fYXQiOiIyMDIzLTEwLTIyVDEwOjM1OjQ2LjUzODIyNSswNzowMCIsInBlcm1pc3Npb25zIjpbeyJpdGVtIjoiYXJ0aWNsZSIsInZpZXciOnRydWUsImluc2VydCI6dHJ1ZSwidXBkYXRlIjp0cnVlLCJkZWxldGUiOnRydWV9LHsiaXRlbSI6ImRldmljZSIsInZpZXciOnRydWUsImluc2VydCI6dHJ1ZSwidXBkYXRlIjp0cnVlLCJkZWxldGUiOnRydWV9LHsiaXRlbSI6InJvbGUiLCJ2aWV3Ijp0cnVlLCJpbnNlcnQiOnRydWUsInVwZGF0ZSI6dHJ1ZSwiZGVsZXRlIjp0cnVlfSx7Iml0ZW0iOiJzY2hlZHVsZSIsInZpZXciOnRydWUsImluc2VydCI6dHJ1ZSwidXBkYXRlIjp0cnVlLCJkZWxldGUiOnRydWV9LHsiaXRlbSI6InVzZXIiLCJ2aWV3Ijp0cnVlLCJpbnNlcnQiOnRydWUsInVwZGF0ZSI6dHJ1ZSwiZGVsZXRlIjp0cnVlfV19.83cPfghBbLs-ZElHhTFfRdLq8GcIP1eCV88E1VVYFT0"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/api/v1/schedules",
+					
+					"host": [
+						"{{base_url}}"
+					],
+					
+					"path": [
+						"api",
+						"v1",
+						"schedules"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "List Schedules",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im5naGlhbHRAdm5nLmNvbS52biIsImxhc3RfbG9naW5fYXQiOiIyMDIzLTEwLTIyVDEwOjM1OjQ2LjUzODIyNSswNzowMCIsInBlcm1pc3Npb25zIjpbeyJpdGVtIjoiYXJ0aWNsZSIsInZpZXciOnRydWUsImluc2VydCI6dHJ1ZSwidXBkYXRlIjp0cnVlLCJkZWxldGUiOnRydWV9LHsiaXRlbSI6ImRldmljZSIsInZpZXciOnRydWUsImluc2VydCI6dHJ1ZSwidXBkYXRlIjp0cnVlLCJkZWxldGUiOnRydWV9LHsiaXRlbSI6InJvbGUiLCJ2aWV3Ijp0cnVlLCJpbnNlcnQiOnRydWUsInVwZGF0ZSI6dHJ1ZSwiZGVsZXRlIjp0cnVlfSx7Iml0ZW0iOiJzY2hlZHVsZSIsInZpZXciOnRydWUsImluc2VydCI6dHJ1ZSwidXBkYXRlIjp0cnVlLCJkZWxldGUiOnRydWV9LHsiaXRlbSI6InVzZXIiLCJ2aWV3Ijp0cnVlLCJpbnNlcnQiOnRydWUsInVwZGF0ZSI6dHJ1ZSwiZGVsZXRlIjp0cnVlfV19.83cPfghBbLs-ZElHhTFfRdLq8GcIP1eCV88E1VVYFT0"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/v1/schedules",
+							
+							"host": [
+								"{{base_url}}"
+							],
+							
+							"path": [
+								"api",
+								"v1",
+								"schedules"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 24 Oct 2023 14:55:32 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "522"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"code\": 1,\n    \"data\": {\n        \"pagination\": {\n            \"page\": 1,\n            \"size\": 100,\n            \"total_pages\": 1\n        },\n        \"items\": [\n            {\n                \"id\": 1,\n                \"created_at\": \"2023-10-24T21:55:12.904+07:00\",\n                \"updated_at\": \"2023-10-24T21:55:12.904+07:00\",\n                \"deleted_at\": null,\n                \"name\": \"chương trình giáng sinh\",\n                \"enabled\": true,\n                \"description\": \"description\",\n                \"creator\": {\n                    \"id\": 1,\n                    \"created_at\": \"2023-10-07T16:50:08.434+07:00\",\n                    \"updated_at\": \"2023-10-09T10:03:43.381+07:00\",\n                    \"deleted_at\": null,\n                    \"name\": \"Nghia 1\",\n                    \"email\": \"nghialt@vng.com.vn\",\n                    \"is_active\": true,\n                    \"last_login_at\": \"0001-01-01T00:00:00Z\"\n                },\n                \"articles\": null\n            }\n        ]\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Create Schedule Time",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im5naGlhbHRAdm5nLmNvbS52biIsImxhc3RfbG9naW5fYXQiOiIyMDIzLTEwLTIyVDEwOjM1OjQ2LjUzODIyNSswNzowMCIsInBlcm1pc3Npb25zIjpbeyJpdGVtIjoiYXJ0aWNsZSIsInZpZXciOnRydWUsImluc2VydCI6dHJ1ZSwidXBkYXRlIjp0cnVlLCJkZWxldGUiOnRydWV9LHsiaXRlbSI6ImRldmljZSIsInZpZXciOnRydWUsImluc2VydCI6dHJ1ZSwidXBkYXRlIjp0cnVlLCJkZWxldGUiOnRydWV9LHsiaXRlbSI6InJvbGUiLCJ2aWV3Ijp0cnVlLCJpbnNlcnQiOnRydWUsInVwZGF0ZSI6dHJ1ZSwiZGVsZXRlIjp0cnVlfSx7Iml0ZW0iOiJzY2hlZHVsZSIsInZpZXciOnRydWUsImluc2VydCI6dHJ1ZSwidXBkYXRlIjp0cnVlLCJkZWxldGUiOnRydWV9LHsiaXRlbSI6InVzZXIiLCJ2aWV3Ijp0cnVlLCJpbnNlcnQiOnRydWUsInVwZGF0ZSI6dHJ1ZSwiZGVsZXRlIjp0cnVlfV19.83cPfghBbLs-ZElHhTFfRdLq8GcIP1eCV88E1VVYFT0"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"phát sóng giáng sinh lần đầu\",\n    \"description\": \"phát sóng giáng sinh lần đầu\",\n    \"schedule_id\": 1,\n    \"schedule_time\": \"2023-01-02T03:04:05.000000006Z\"\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/api/v1/scheduletimes",
+					
+					"host": [
+						"{{base_url}}"
+					],
+					
+					"path": [
+						"api",
+						"v1",
+						"scheduletimes"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Create Schedule Time",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im5naGlhbHRAdm5nLmNvbS52biIsImxhc3RfbG9naW5fYXQiOiIyMDIzLTEwLTIyVDEwOjM1OjQ2LjUzODIyNSswNzowMCIsInBlcm1pc3Npb25zIjpbeyJpdGVtIjoiYXJ0aWNsZSIsInZpZXciOnRydWUsImluc2VydCI6dHJ1ZSwidXBkYXRlIjp0cnVlLCJkZWxldGUiOnRydWV9LHsiaXRlbSI6ImRldmljZSIsInZpZXciOnRydWUsImluc2VydCI6dHJ1ZSwidXBkYXRlIjp0cnVlLCJkZWxldGUiOnRydWV9LHsiaXRlbSI6InJvbGUiLCJ2aWV3Ijp0cnVlLCJpbnNlcnQiOnRydWUsInVwZGF0ZSI6dHJ1ZSwiZGVsZXRlIjp0cnVlfSx7Iml0ZW0iOiJzY2hlZHVsZSIsInZpZXciOnRydWUsImluc2VydCI6dHJ1ZSwidXBkYXRlIjp0cnVlLCJkZWxldGUiOnRydWV9LHsiaXRlbSI6InVzZXIiLCJ2aWV3Ijp0cnVlLCJpbnNlcnQiOnRydWUsInVwZGF0ZSI6dHJ1ZSwiZGVsZXRlIjp0cnVlfV19.83cPfghBbLs-ZElHhTFfRdLq8GcIP1eCV88E1VVYFT0"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"phát sóng giáng sinh lần đầu\",\n    \"description\": \"phát sóng giáng sinh lần đầu\",\n    \"schedule_id\": 1,\n    \"schedule_time\": \"2023-01-02T03:04:05.000000006Z\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v1/scheduletimes",
+							
+							"host": [
+								"{{base_url}}"
+							],
+							
+							"path": [
+								"api",
+								"v1",
+								"scheduletimes"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 24 Oct 2023 15:02:18 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "407"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"code\": 1,\n    \"data\": {\n        \"schedule_id\": 1,\n        \"schedule_time\": \"2023-01-02T03:04:05.000000006Z\",\n        \"name\": \"phát sóng giáng sinh lần đầu\",\n        \"approved\": false,\n        \"description\": \"phát sóng giáng sinh lần đầu\",\n        \"created_at\": \"2023-10-24T22:02:18.465+07:00\",\n        \"updated_at\": \"2023-10-24T22:02:18.465+07:00\",\n        \"deleted_at\": null,\n        \"approved_at\": \"0001-01-01T00:00:00Z\",\n        \"approver_id\": 0,\n        \"path\": \"/scheduletimes/1/time/20230102030405\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Schedule Time",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im5naGlhbHRAdm5nLmNvbS52biIsImxhc3RfbG9naW5fYXQiOiIyMDIzLTEwLTIyVDEwOjM1OjQ2LjUzODIyNSswNzowMCIsInBlcm1pc3Npb25zIjpbeyJpdGVtIjoiYXJ0aWNsZSIsInZpZXciOnRydWUsImluc2VydCI6dHJ1ZSwidXBkYXRlIjp0cnVlLCJkZWxldGUiOnRydWV9LHsiaXRlbSI6ImRldmljZSIsInZpZXciOnRydWUsImluc2VydCI6dHJ1ZSwidXBkYXRlIjp0cnVlLCJkZWxldGUiOnRydWV9LHsiaXRlbSI6InJvbGUiLCJ2aWV3Ijp0cnVlLCJpbnNlcnQiOnRydWUsInVwZGF0ZSI6dHJ1ZSwiZGVsZXRlIjp0cnVlfSx7Iml0ZW0iOiJzY2hlZHVsZSIsInZpZXciOnRydWUsImluc2VydCI6dHJ1ZSwidXBkYXRlIjp0cnVlLCJkZWxldGUiOnRydWV9LHsiaXRlbSI6InVzZXIiLCJ2aWV3Ijp0cnVlLCJpbnNlcnQiOnRydWUsInVwZGF0ZSI6dHJ1ZSwiZGVsZXRlIjp0cnVlfV19.83cPfghBbLs-ZElHhTFfRdLq8GcIP1eCV88E1VVYFT0"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/api/v1/scheduletimes/1/time/20230102030405",
+					
+					"host": [
+						"{{base_url}}"
+					],
+					
+					"path": [
+						"api",
+						"v1",
+						"scheduletimes",
+						"1",
+						"time",
+						"20230102030405"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Create Schedule Time",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im5naGlhbHRAdm5nLmNvbS52biIsImxhc3RfbG9naW5fYXQiOiIyMDIzLTEwLTIyVDEwOjM1OjQ2LjUzODIyNSswNzowMCIsInBlcm1pc3Npb25zIjpbeyJpdGVtIjoiYXJ0aWNsZSIsInZpZXciOnRydWUsImluc2VydCI6dHJ1ZSwidXBkYXRlIjp0cnVlLCJkZWxldGUiOnRydWV9LHsiaXRlbSI6ImRldmljZSIsInZpZXciOnRydWUsImluc2VydCI6dHJ1ZSwidXBkYXRlIjp0cnVlLCJkZWxldGUiOnRydWV9LHsiaXRlbSI6InJvbGUiLCJ2aWV3Ijp0cnVlLCJpbnNlcnQiOnRydWUsInVwZGF0ZSI6dHJ1ZSwiZGVsZXRlIjp0cnVlfSx7Iml0ZW0iOiJzY2hlZHVsZSIsInZpZXciOnRydWUsImluc2VydCI6dHJ1ZSwidXBkYXRlIjp0cnVlLCJkZWxldGUiOnRydWV9LHsiaXRlbSI6InVzZXIiLCJ2aWV3Ijp0cnVlLCJpbnNlcnQiOnRydWUsInVwZGF0ZSI6dHJ1ZSwiZGVsZXRlIjp0cnVlfV19.83cPfghBbLs-ZElHhTFfRdLq8GcIP1eCV88E1VVYFT0"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"phát sóng giáng sinh lần đầu\",\n    \"description\": \"phát sóng giáng sinh lần đầu\",\n    \"schedule_id\": 1,\n    \"schedule_time\": \"2023-01-02T03:04:05.000000006Z\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v1/scheduletimes",
+							
+							"host": [
+								"{{base_url}}"
+							],
+							
+							"path": [
+								"api",
+								"v1",
+								"scheduletimes"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 24 Oct 2023 15:02:18 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "407"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"code\": 1,\n    \"data\": {\n        \"schedule_id\": 1,\n        \"schedule_time\": \"2023-01-02T03:04:05.000000006Z\",\n        \"name\": \"phát sóng giáng sinh lần đầu\",\n        \"approved\": false,\n        \"description\": \"phát sóng giáng sinh lần đầu\",\n        \"created_at\": \"2023-10-24T22:02:18.465+07:00\",\n        \"updated_at\": \"2023-10-24T22:02:18.465+07:00\",\n        \"deleted_at\": null,\n        \"approved_at\": \"0001-01-01T00:00:00Z\",\n        \"approver_id\": 0,\n        \"path\": \"/scheduletimes/1/time/20230102030405\"\n    }\n}"
+				}
+			]
+		}
+	]
+}
