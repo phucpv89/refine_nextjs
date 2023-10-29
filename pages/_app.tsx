@@ -35,7 +35,7 @@ import {
 const API_URL = "https://api.fake-rest.refine.dev";
 
 import nookies from "nookies";
-import { Devices, User } from "iconsax-react";
+import { Devices, Sound, User } from "iconsax-react";
 
 // const API_URL = "";
 
@@ -58,6 +58,8 @@ function CustomizeTitle() {
     />
   );
 }
+
+const ICON_SIZE = 20;
 
 function MyApp({ Component, pageProps }: AppPropsWithLayout): JSX.Element {
   const renderComponent = () => {
@@ -84,6 +86,7 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout): JSX.Element {
             dataProvider={{
               demo: dataProvider(API_URL),
               default: dataProvider("", apiInstance as any),
+              medias: dataProvider("/medias", apiInstance as any),
               // articles: dataProvider("", apiInstance as any),
               // users: dataProvider("", apiInstance as any),
               // routerProvider={routerProvider}
@@ -95,22 +98,29 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout): JSX.Element {
                 name: "group_users",
                 meta: {
                   label: "Người dùng",
-                  icon: <User size="14" />,
+                  icon: <User size={ICON_SIZE} />,
                 },
               },
               {
                 name: "group_devices",
                 meta: {
                   label: "Thiết bị",
-                  icon: <Devices size="14" />,
+                  icon: <Devices size={ICON_SIZE}/>,
+                },
+              },
+              {
+                name: "group_schedules",
+                meta: {
+                  label: "Phát sóng",
+                  icon: <NotificationOutlined />,
                 },
               },
               {
                 meta: {
                   // dataProviderName: "articles",
                   canDelete: true,
-                  label: "Articles",
-                  icon: <NotificationOutlined />,
+                  label: "Bản tin",
+                  icon: <Sound size={ICON_SIZE}/>,
                 },
                 name: "articles",
                 list: "/articles",
@@ -172,9 +182,42 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout): JSX.Element {
               },
 
               {
-                name: "devices/types",
+                meta: {
+                  canDelete: true,
+                  label: "Chương trình",
+                  // icon: <Devices size="14" />,
+                  parent: "group_schedules",
+                },
+                name: "schedules",
+                list: "/schedules",
+                create: "/schedules/create",
+                edit: "/schedules/edit/:id",
+                show: "/schedules/show/:id",
+              },
+              {
+                meta: {
+                  canDelete: true,
+                  label: "Lịch phát sóng",
+                  // icon: <Devices size="14" />,
+                  parent: "group_schedules",
+                },
+                name: "scheduletimes",
+                list: "/scheduletimes",
+                create: "/scheduletimes/create",
+                edit: "/scheduletimes/edit/:id",
+                show: "/scheduletimes/show/:id",
               },
 
+              {
+                name: "medias",
+              },
+
+              {
+                name: "devices/types",
+              },
+              {
+                name: "articlesschedule",
+              },
               // {
               //   name: "blog_posts",
               //   list: "/blog-posts",
@@ -186,17 +229,17 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout): JSX.Element {
               //     dataProviderName: "demo",
               //   },
               // },
-              {
-                name: "categories",
-                // list: "/categories",
-                // create: "/categories/create",
-                // edit: "/categories/edit/:id",
-                // show: "/categories/show/:id",
-                meta: {
-                  canDelete: true,
-                  dataProviderName: "demo",
-                },
-              },
+              // {
+              //   name: "categories",
+              //   list: "/categories",
+              //   create: "/categories/create",
+              //   edit: "/categories/edit/:id",
+              //   show: "/categories/show/:id",
+              //   meta: {
+              //     canDelete: true,
+              //     dataProviderName: "demo",
+              //   },
+              // },
             ]}
             options={{
               syncWithLocation: true,

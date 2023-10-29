@@ -36,32 +36,6 @@ export const ArticleCreate: React.FC<IResourceComponentsProps> = () => {
   return (
     <Create saveButtonProps={saveButtonProps}>
       <Form {...formProps} layout="vertical">
-        {/* <Form.Item
-          label="Created At"
-          name={["created_at"]}
-          rules={[
-            {
-              required: true,
-            },
-          ]}
-          getValueProps={(value) => ({
-            value: value ? dayjs(value) : undefined,
-          })}>
-          <DatePicker />
-        </Form.Item>
-        <Form.Item
-          label="Updated At"
-          name={["updated_at"]}
-          rules={[
-            {
-              required: true,
-            },
-          ]}
-          getValueProps={(value) => ({
-            value: value ? dayjs(value) : undefined,
-          })}>
-          <DatePicker />
-        </Form.Item> */}
         <Form.Item
           label="Title"
           name={["title"]}
